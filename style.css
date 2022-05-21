@@ -21,14 +21,21 @@ body{
 }
 
 h1{
+    text-align: center;
     align-self: center;
     justify-self: center;
     background: linear-gradient(to right, #a51e1e, #3b59f5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
-
+.row-flexbox{
+    display: flex;
+    flex-flow: row;
+}
+.column-flexbox{
+    display: flex;
+    flex-flow:column;
+}
 /* heading */
 
 header{
@@ -40,17 +47,24 @@ header{
     justify-content: space-evenly;
 }
 p{
+    line-height: 2;
     text-align: center;
     background: linear-gradient(to right top, #a51e1e, #3b59f5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
 }
+span{
+    text-align: center;
+    background: linear-gradient(to right top, #a51e1e, #3b59f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .flex-container{
     position:relative;
     display: flex;
     flex-flow: column;
-    height: 100vh;
+    min-height: 100vh;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -116,8 +130,28 @@ div#section1{
 /* section1 */
 
 
-
-
 /* location */
+#technologies div{
+    display: flex;
+}
+.tech-container{
+    gap: 2rem;
+    flex-flow: column;
+    align-items: center;
+}
+div.tech{
+    gap: 1rem;
+    /* align-items: cente */
+    align-items:center;
+    justify-content:space-between;
+    width: -webkit-fill-available;
+}
+.technology-list{
+    /* gap:; */
+    width: max-content;
+    flex-flow:column;
+    align-items: center;
+    justify-content: center;
+}
 
 /* location */
