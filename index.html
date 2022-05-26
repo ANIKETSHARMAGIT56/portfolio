@@ -7,168 +7,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aniket</title>
 </head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="tag-styling.css">
+<style>
+
+</style>
 
 <body>
-    <header class="flex-container">
+    <section id="head">
+        <div class="emoji">👋</div>
+        <h1>Hola amigo</h1>
+        <h1>I'm aniket</h1>
+        <p>i am a developer <br> i have been coding since the age of 11 </p>
+        <a href="#intro">
 
-
-        <div class="heading">
-            <div class="emoji">👋</div>
-            <h1>Hola amigo</h1>
-            <h1>I'm aniket</h1>
-        </div>
-
-        <p>i am a developer <br> lemme take you through my interesting life journey </p>
-        <a href="#section1">
-            <img id="down-arrow" src="Arrow-down.svg" alt="let's go ">
+            <img class="down-arrow" src="Arrow-down.svg" alt="let's go ">
         </a>
+    </section>
+    <section id="intro">
+        <div class="emoji">😃</div>
+        <h2 id="section1-heading">I am a 15 year old school student <br>
+            who is interested in coding,technology and physics.</h2>
+            <p>welcome to my small world</p>
+            <a href="#tech">
+                <img class="down-arrow" src="Arrow-down.svg" alt="let's go ">
+            </a>
+    </section>
+    <section id="tech">
+        <h1>My Specialities</h1>
 
-    </header>
+        <h2>operating systems</h2>
 
-    <div class="flex-container" id="section1">
+        <p>windows</p>
+        <span class="progress">
+            <span class="progress-bar" style="--its-width:40%; --display:40;"></span>
+        </span>
 
+        <p>linux</p><span class="progress">
+            <span class="progress-bar" style="--its-width:70%; --display:70;"></span>
+        </span>
 
-        <div class="heading">
-            <div class="emoji">😃</div>
-            <h1 id="section1-heading">I am a 15 year old school student <br>
-                who is interested in coding,technology and physics.</h1>
-        </div>
-
-
-        <p>welcome to my small world</p>
-
-        <a href="#technologies">
-            <img id="down-arrow" src="Arrow-down.svg" alt="let's go ">
-        </a>
-    </div>
+        <h2>programming languages</h2>
 
 
-    <div id="technologies" class="flex-container">
-        <h1>My speciality in technologies</h1>
-        <div class="tech-container">
-            <h1>operating systems</h1>
-            <div class="technology-list">
-                <div class="tech">
-                    <p>windows</p>
-                    <span class="progress" style="--its-width:40%; --display:40;">
-                        <span class="progress-bar"></span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>linux</p><span class="progress" style="--its-width:70%; --display:70;">
-                        <span class="progress-bar" ></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="tech-container">
-            <h1>programming languages</h1>
-            <div class="technology-list">
-                <div class="tech">
-                    <p>C</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:80%; --display:80;"> </span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>C++</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:40%; --display:40;"> </span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>C#</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:20%; --display:20;"> </span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>Rust</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:20%; --display:20;"> </span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>python</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:50%; --display:50;"></span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>Bash script</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:50%; --display:50;"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="tech-container">
-            <h1>Markup languages</h1>
-            <div class="technology-list">
-                <div class="tech">
-                    <p>HTML</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:90%; --display:90;"></span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>CSS</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:80%; --display:80;"></span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>Mardown</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:90%; --display:90;"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="tech-container">
-            <h1>Editors</h1>
-            <div class="technology-list">
-                <div class="tech">
-                    <p>Visual Studio Code</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:95%; --display:95;"></span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>Atom</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:50%; --display:50;"></span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>Gimp</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:40%; --display:40;"></span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>GNU nano</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:90%; --display:90;"></span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>Figma</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:30%; --display:30;"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="tech-container">
-            <h1>Others</h1>
-            <div class="technology-list">
-                <div class="tech">
-                    <p>Git</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:65%; --display:65;"></span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>Unix commands</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:80%; --display:80;"></span>
-                    </span>
-                </div>
-                <div class="tech">
-                    <p>Github</p><span class="progress">
-                        <span class="progress-bar" style="--its-width:80%; --display:80;"></span>
-                    </span>
-                </div>
+        <p>C</p><span class="progress">
+            <span class="progress-bar" style="--its-width:80%; --display:80;"> </span>
+        </span>
 
-            </div>
-        </div>
-    </div>
+        <p>C++</p><span class="progress">
+            <span class="progress-bar" style="--its-width:40%; --display:40;"> </span>
+        </span>
+
+        <p>C#</p><span class="progress">
+            <span class="progress-bar" style="--its-width:20%; --display:20;"> </span>
+        </span>
+
+        <p>Rust</p><span class="progress">
+            <span class="progress-bar" style="--its-width:20%; --display:20;"> </span>
+        </span>
+
+        <p>python</p><span class="progress">
+            <span class="progress-bar" style="--its-width:50%; --display:50;"></span>
+        </span>
+
+        <p>Bash script</p><span class="progress">
+            <span class="progress-bar" style="--its-width:50%; --display:50;"></span>
+        </span>
+
+
+
+        <h2>Markup languages</h2>
+
+
+        <p>HTML</p><span class="progress">
+            <span class="progress-bar" style="--its-width:90%; --display:90;"></span>
+        </span>
+        <p>CSS</p><span class="progress">
+            <span class="progress-bar" style="--its-width:80%; --display:80;"></span>
+        </span>
+        <p>Mardown</p><span class="progress">
+            <span class="progress-bar" style="--its-width:90%; --display:90;"></span>
+        </span>
+
+
+
+        <h2>Editors</h2>
+
+        <p>VS Code</p><span class="progress">
+            <span class="progress-bar" style="--its-width:95%; --display:95;"></span>
+        </span>
+
+        <p>Atom</p><span class="progress">
+            <span class="progress-bar" style="--its-width:50%; --display:50;"></span>
+        </span>
+
+        <p>Gimp</p><span class="progress">
+            <span class="progress-bar" style="--its-width:40%; --display:40;"></span>
+        </span>
+
+        <p>GNU nano</p><span class="progress">
+            <span class="progress-bar" style="--its-width:90%; --display:90;"></span>
+        </span>
+
+        <p>Figma</p><span class="progress">
+            <span class="progress-bar" style="--its-width:30%; --display:30;"></span>
+        </span>
+
+
+        <h2>Others</h2>
+
+
+        <p>Git</p><span class="progress">
+            <span class="progress-bar" style="--its-width:65%; --display:65;"></span>
+        </span>
+        <p>Unix commands</p><span class="progress">
+            <span class="progress-bar" style="--its-width:80%; --display:80;"></span>
+        </span>
+        <p>Github</p><span class="progress">
+            <span class="progress-bar" style="--its-width:80%; --display:80;"></span>
+        </span>
+    </section>
+    <!-- <section id="creations">
+        <h2> My Creations </h2>
+        <p>my first project written in C , this is simple terminal based game not quite like the original space invaders game,S but yes</p>
+    </section> -->
 </body>
-
 </html>
