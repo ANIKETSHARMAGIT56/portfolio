@@ -1,10 +1,10 @@
 :root {
     --gradient-red: #a51e1e;
     --gradient-blue: #3b59f5;
+    color-scheme: dark;
 }
 
 * {
-    color-scheme: dark;
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -50,13 +50,17 @@ p {
     /* width: max-content; */
     /* line-height: ; */
     text-align: center;
-    background: linear-gradient(to right top, var(--gradient-red), var(--gradient-blue));
+    background: linear-gradient(to right bottom, #2449ff, #ff0149);
+    /* background: linear-gradient(to right top,#00bfff,#01ff9e ); */
+    
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
 }
 
 .emoji {
+    line-height: 2;
     font-size: 4rem;
     align-self: center;
 }
@@ -65,7 +69,7 @@ p {
     color-scheme: dark;
 }
 
-@keyframes example {
+@keyframes downarrow {
     from {
         transform: translateY(6%);
     }
@@ -86,7 +90,7 @@ section{
     width: 3rem;
     height: 3rem;
     transition: 1s;
-    animation-name: example;
+    animation-name: downarrow;
     animation-duration: 0.9s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -107,6 +111,7 @@ section{
     overflow: hidden;
 }
 .progress-bar{
+    color: white;
     box-shadow:0 0 60px #ff0149;
     width: var(--its-width);
     border-radius: 0.3rem;
@@ -117,7 +122,10 @@ section{
     font-size: 0.7rem;
     color: black;
     padding-right: 0.2rem;
-    background: linear-gradient(to left, #ff0149, #cc00fffc);
+    background:#b902ca;
+    -webkit-text-fill-color: white;
+
+    /* background: linear-gradient(to left, #ff0149, #cc00fffc); */
 }
 .progress-bar::before{
     counter-increment: test var(--display);
@@ -128,6 +136,7 @@ section#head{
     grid-template-rows: 3fr 0.5fr 1fr 4fr 1fr;
 }
 section#intro{
+    height: 100vh;
     text-align: center;
     background: rgba(255, 255, 255, 0.05);
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -135,46 +144,109 @@ section#intro{
 section#tech{
     padding-top: 2rem;
     padding-bottom: 2rem;
-    /* column-gap: 1rem; */
+    column-gap: 1rem;
     row-gap: 1rem;
     /* width: 100%; */
-    /* padding-left: 2rem; */
+    padding-bottom: 5rem;
     grid-auto-rows: 1.7rem;
-    /* grid-template-columns: 1fr 2fr ; */
 }
 section#tech h1{
+    font-size: 3rem;
     grid-row: span 4;
     grid-column: span 2;
 
 }
-
 section#tech h2{
-    
     grid-row: span 3;
     grid-column: span 2;
 }
-#list-container{
-    /* width: 80%; */
+section#creations{
+    width: 100%;
+    padding-top: 2rem;
+    gap: 5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+/* hr{
+    grid-column: span 4;
+} */
+#list{
+    max-width: 60rem;
+    width: 99vw;
+    display: grid;
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+.card{
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.06);
+    display: grid;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(8,3rem);
+    border: 2px solid rgba(0, 0, 0, 0.265);
+    background-color:rgba(255, 255, 255, 0);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    
+}
+.project-name{
+    background: linear-gradient(to right top,#00bfff,#01ff9e );
+    grid-row: span 2;
+    grid-column: span 4;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.project-description{
+    max-width: 20rem;
+    grid-column: span 4;
+    grid-row: span 2;
+    line-height: 1.8;
+    font-size: 0.8rem;
+    background: linear-gradient(-30deg,#00bfff,#01ff9e );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.card .emoji{
+    grid-row: span 2;
+    grid-column: span 2;
+}
+.card .emo1{
+    transform: rotate(20deg);
+}
+.card .emo2{
+    transform: rotate(-20deg);
+}
+.gh-link{
+    grid-column: span 2;
+    width: 2rem;
+
+}
+.gh-link img{
+    text-justify: center;
+    object-fit: contain;
+    width: 2rem;
+}
+.links{
+    grid-column: span 4;
+}
+.link-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* width: 100%; */
-}
-
-section#creations div#list {
-    /* width: 80%; */
-    display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-
+    grid-column: span 4;
 }
-section#creations div.card {
-    display: flex;
-    height: 15rem;
-    width: 10rem;
-    background-color: #ff0149;
-    /*margin:2rem;*/
-}
+@media only screen and (max-width:600px) {
+    .emo1{
+        display: none;
+    }
+    .card .emo2{
+    transform:unset; 
+    grid-column: span 4;
 
+    }
+}
