@@ -9,202 +9,276 @@
 </head>
 <link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
-<style>
+<!-- <link rel="stylesheet" href="illi.css"> -->
 
-</style>
 
 <body>
+    <nav>
+        <h1>Aniket</h1>
+        <!-- <button></button> -->
+        <input id="button" type="checkbox">
+        <label for="button">&#9776;</label>
+        <div id="navlinks">
+            <a href="#head">
+                <p>Home</p>
+            </a>
+            <a href="#intro">
+                <p>About</p>
+            </a>
+            <a href="#tech">
+                <p>Skills</p>
+            </a>
+            <a href="#creations">
+                <p>Projects</p>
+            </a>
+        </div>
+
+    </nav>
     <section id="head">
         <div class="emoji">👋</div>
-        <h1>Hola amigo</h1>
-        <h1>I'm aniket</h1>
-        <p>i am a developer <br> i have been coding since the age of 11 </p>
+        <h1 id="first-head">Hola amigo</h1>
+        <h2 id="second-head">I'm aniket</h2>
+        <p>i am a developer <br> i have been coding since the age of 11. </p>
         <a href="#intro">
 
-            <img class="down-arrow" src="Arrow-down.svg" alt="let's go ">
+            <img class="down-arrow icon" src="images/Arrow-down.svg" alt="let's go ">
         </a>
     </section>
     <section id="intro">
         <div class="emoji">😃</div>
-        <h2 id="section1-heading">I am a 15 year old school student <br>
-            who is interested in coding,technology and physics.</h2>
-            <p>welcome to my small world</p>
-            <a href="#tech">
-                <img class="down-arrow" src="Arrow-down.svg" alt="let's go ">
-            </a>
+        <h1 id="section1-heading">I am a school student <br>
+            I love coding</h1>
+        <p>welcome to my small world</p>
+        <a href="#tech">
+            <img class="down-arrow icon" src="images/Arrow-down.svg" alt="let's go ">
+        </a>
     </section>
     <section id="tech">
         <h1>My Specialities</h1>
 
-        <h2>operating systems</h2>
+        <div class="tech-card">
+            <h2>operating systems</h2>
 
-        <p>windows</p>
-        <span class="progress">
-            <span class="progress-bar" style="--its-width:40%; --display:40;"></span>
-        </span>
-
-        <p>linux</p><span class="progress">
-            <span class="progress-bar" style="--its-width:70%; --display:70;"></span>
-        </span>
-
-        <h2>programming languages</h2>
-
-
-        <p>C</p><span class="progress">
-            <span class="progress-bar" style="--its-width:80%; --display:80;"> </span>
-        </span>
-
-        <p>C++</p><span class="progress">
-            <span class="progress-bar" style="--its-width:40%; --display:40;"> </span>
-        </span>
-
-        <p>C#</p><span class="progress">
-            <span class="progress-bar" style="--its-width:20%; --display:20;"> </span>
-        </span>
-
-        <p>Rust</p><span class="progress">
-            <span class="progress-bar" style="--its-width:20%; --display:20;"> </span>
-        </span>
-
-        <p>python</p><span class="progress">
-            <span class="progress-bar" style="--its-width:50%; --display:50;"></span>
-        </span>
-
-        <p>Bash script</p><span class="progress">
-            <span class="progress-bar" style="--its-width:50%; --display:50;"></span>
-        </span>
-
-
-
-        <h2>Markup languages</h2>
-
-
-        <p>HTML</p><span class="progress">
-            <span class="progress-bar" style="--its-width:90%; --display:90;"></span>
-        </span>
-        <p>CSS</p><span class="progress">
-            <span class="progress-bar" style="--its-width:80%; --display:80;"></span>
-        </span>
-        <p>Mardown</p><span class="progress">
-            <span class="progress-bar" style="--its-width:90%; --display:90;"></span>
-        </span>
-
-
-
-        <h2>Editors</h2>
-
-        <p>VS Code</p><span class="progress">
-            <span class="progress-bar" style="--its-width:95%; --display:95;"></span>
-        </span>
-
-        <p>Atom</p><span class="progress">
-            <span class="progress-bar" style="--its-width:50%; --display:50;"></span>
-        </span>
-
-        <p>Gimp</p><span class="progress">
-            <span class="progress-bar" style="--its-width:40%; --display:40;"></span>
-        </span>
-
-        <p>GNU nano</p><span class="progress">
-            <span class="progress-bar" style="--its-width:90%; --display:90;"></span>
-        </span>
-
-        <p>Figma</p><span class="progress">
-            <span class="progress-bar" style="--its-width:30%; --display:30;"></span>
-        </span>
-
-
-        <h2>Others</h2>
-
-
-        <p>Git</p><span class="progress">
-            <span class="progress-bar" style="--its-width:65%; --display:65;"></span>
-        </span>
-        <p>Unix commands</p><span class="progress">
-            <span class="progress-bar" style="--its-width:80%; --display:80;"></span>
-        </span>
-        <p>Github</p><span class="progress">
-            <span class="progress-bar" style="--its-width:80%; --display:80;"></span>
-        </span>
-    </section>
-    <section id="creations">
-        <h1> My Creations </h1>
-        <div id="list">
-            <div class="card">
-                <div class="emoji emo2">📖</div>
-                <div class="emoji emo1">📰</div>
-                <h2 class="project-name">Smalltown<br>News</h2>
-                <!-- <hr> -->
-                <!-- <div class="emoji emo2"></div> -->
-                <p class="project-description">this is my daily newspaper blog. I upload news everyday at 7 am.
-                    only positive news is listed on my site.</p>
-                <h4 class="links">Links</h4>
-                <div class="link-container">
-                    <a class="gh-link link1" target="_blank" href="https://github.com/ANIKETSHARMAGIT56/smalltown-news"><img src="github.svg" alt=""></a>
-                    <a class="gh-link link2" target="_blank" href="https://smalltownnews.netlify.app"><img src="open-link.svg" alt=""></a>
-                </div>
+            <div class="tech-cont">
+                <p>windows</p>
+                <p>Advanced</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:60%; --display:60;"></span></span>
             </div>
-            <div class="card">
-                <!-- <div class="emoji emo2"></div> -->
-                <div class="emoji emo2">🚧</div>
-                <div class="emoji emo1">🏗️</div>
-                <h2 class="project-name">Avish<br>enterprise</h2>
-                <p class="project-description">This is the official website for Avish Enterprise. Designed and
-                    developed by me</p>
-                <h4 class="links">Links</h4>
-                <div class="link-container">
-                    <a class="gh-link link1" target="_blank" href="https://github.com/ANIKETSHARMAGIT56/avish-contruction"><img src="github.svg" alt=""></a>
-                    <a class="gh-link link2" target="_blank" href="https://avish.netlify.app"><img src="open-link.svg" alt=""></a>
-                </div>
+            <div class="tech-cont">
+                <p>linux</p>
+                <p>Advanced</p>
+                <p><i>(I use arch BTW)</i></p>
+                <span class="progress"><span class="progress-bar" style="--its-width:70%; --display:70;"></span></span>
             </div>
-            <div class="card">
-                <!-- <div class="emoji emo2"></div> -->
-                <div class="emoji emo2">🎮</div>
-                <div class="emoji emo1">📺</div>
-                <h2 class="project-name">Tetris <br> with C</h2>
-                <p class="project-description">This is a clone of the classic tetris game made with pure C and
-                    legacy OpenGL</p>
-                <h4 class="links">Links</h4>
-                <div class="link-container">
-                    <a class="gh-link link1" target="_blank" href="https://github.com/ANIKETSHARMAGIT56/tetris"><img src="github.svg" alt=""></a>
-                </div>
+        </div>
+        <div class="tech-card">
+            <h2>programming languages</h2>
+
+
+
+            <div class="tech-cont">
+                <p>C</p>
+                <p>Advanced</p><span class="progress"><span class="progress-bar" style="--its-width:80%;"></span></span>
             </div>
-            <div class="card">
-                <!-- <div class="emoji emo2"></div> -->
-                <div class="emoji emo2">⏰</div>
-                <div class="emoji emo1">⌚</div>
-                <h2 class="project-name">Arduino <br> digital clock</h2>
-                <p class="project-description">A digital clock made with arduino and 7 segment display <i>(one of my first electronics projects)</i></p>
-                <h4 class="links">Links</h4>
-                <div class="link-container">
-                    <a class="gh-link link1" target="_blank" href="https://github.com/ANIKETSHARMAGIT56/Arduino-digital-clock"><img src="github.svg" alt=""></a>
-                </div>
+            <div class="tech-cont">
+                <p>C++</p>
+                <p>Intermediate</p><span class="progress"><span class="progress-bar" style="--its-width:40%; 
+                --display:40;"></span></span>
             </div>
-            <div class="card">
-                <!-- <div class="emoji emo2"></div> -->
-                <div class="emoji emo2">🥁</div>
-                <div class="emoji emo1">🎵</div>
-                <h2 class="project-name">Arduino <br> digital drumpad</h2>
-                <p class="project-description">An electronic drum made with Arduino and the driver code is written in python.</p>
-                <h4 class="links">Links</h4>
-                <div class="link-container">
-                    <a class="gh-link link1" target="_blank" href="https://github.com/ANIKETSHARMAGIT56/diy-drumpad"><img src="github.svg" alt=""></a>
-                </div>
+            <div class="tech-cont">
+                <p>Rust</p>
+                <p>Beginner</p><span class="progress"><span class="progress-bar" style="--its-width:20%; --display:20;">
+                    </span></span>
             </div>
-            <div class="card">
-                <!-- <div class="emoji emo2"></div> -->
-                <div class="emoji emo2">⚙️</div>
-                <div class="emoji emo1">💻</div>
-                <h2 class="project-name">Arch linux<br> configs</h2>
-                <p class="project-description">my arch linux configs uploaded to a repo for public use. just run 1 command and you're good to go.</p>
-                <h4 class="links">Links</h4>
-                <div class="link-container">
-                    <a class="gh-link link1" target="_blank" href="https://github.com/ANIKETSHARMAGIT56/myconfigs"><img src="github.svg" alt=""></a>
-                </div>
+            <div class="tech-cont">
+                <p>python</p>
+                <p>Intermediate</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:50%; --display:50;"></span></span>
             </div>
 
         </div>
+        <div class="tech-card">
+            <h2>Markup languages</h2>
+
+
+            <div class="tech-cont">
+                <p>HTML</p>
+                <p>Advanced</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:90%; --display:90;"></span></span>
+            </div>
+            <div class="tech-cont">
+                <p>CSS</p>
+                <p>Advanced</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:80%; --display:80;"></span></span>
+            </div>
+            <div class="tech-cont">
+                <p>Mardown</p>
+                <p>Expert</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:90%; --display:90;"></span></span>
+            </div>
+
+        </div>
+        <div class="tech-card">
+            <h2>Editors</h2>
+
+            <div class="tech-cont">
+                <p>VS Code</p>
+                <p>Expert</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:95%; --display:95;"></span></span>
+            </div>
+            <div class="tech-cont">
+                <p>Atom</p>
+                <p>Intermediate</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:50%; --display:50;"></span></span>
+            </div>
+            <div class="tech-cont">
+                <p>Gimp</p>
+                <p>Beginner</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:40%; --display:40;"></span></span>
+            </div>
+            <div class="tech-cont">
+                <p>GNU nano</p>
+                <p>Expert</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:90%; --display:90;"></span></span>
+            </div>
+            <div class="tech-cont">
+                <p>Figma</p>
+                <p>Beginner</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:30%; --display:30;"></span></span>
+            </div>
+
+        </div>
+        <div class="tech-card">
+            <h2>Others</h2>
+
+
+            <div class="tech-cont">
+                <p>Git</p>
+                <p>Intermediate</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:65%; --display:65;"></span></span>
+            </div>
+            <div class="tech-cont">
+                <p>Unix commands</p>
+                <p>Advanced</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:80%; --display:80;"></span></span>
+            </div>
+            <div class="tech-cont">
+                <p>Github</p>
+                <p>Advanced</p><span class="progress"><span class="progress-bar"
+                        style="--its-width:80%; --display:80;"></span></span>
+            </div>
+        </div>
     </section>
+    <section id="creations">
+        <h1> My Creations </h1>
+        <div class="project-card">
+            <div class="emojicont">
+                <div class="emoji emo2">📖</div>
+                <div class="emoji emo1">📰</div>
+            </div>
+            <h2 class="project-name">Smalltown<br>News</h2>
+            <p class="project-description">this is my daily newspaper blog. I upload news everyday at 7 am.
+                only positive news is listed on my site.</p>
+            <h4 class="links">Links</h4>
+            <div class="link-container">
+                <a class="gh-link link1 icon" target="_blank"
+                    href="https://github.com/ANIKETSHARMAGIT56/smalltown-news"><img src="images/github.svg" alt=""></a>
+                <a class="gh-link link2 icon" target="_blank" href="https://smalltownnews.netlify.app"><img
+                        src="images/open-link.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="emojicont">
+                <div class="emoji emo2">🚧</div>
+                <div class="emoji emo1">🏗️</div>
+            </div>
+            <h2 class="project-name">Avish<br>enterprise</h2>
+            <p class="project-description">This is the official website for Avish Enterprise. Designed and
+                developed by me</p>
+            <h4 class="links">Links</h4>
+            <div class="link-container">
+                <a class="gh-link link1 icon" target="_blank"
+                    href="https://github.com/ANIKETSHARMAGIT56/avish-contruction"><img src="images/github.svg"
+                        alt=""></a>
+                <a class="gh-link link2 icon" target="_blank" href="https://avish.netlify.app"><img
+                        src="images/open-link.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="emojicont">
+                <div class="emoji emo2">🎮</div>
+                <div class="emoji emo1">📺</div>
+            </div>
+            <h2 class="project-name">Tetris <br> with C</h2>
+            <p class="project-description">This is a clone of the classic tetris game made with pure C and
+                legacy OpenGL</p>
+            <h4 class="links">Links</h4>
+            <div class="link-container">
+                <a class="gh-link link1 icon" target="_blank" href="https://github.com/ANIKETSHARMAGIT56/tetris"><img
+                        src="images/github.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="emojicont">
+                <div class="emoji emo2">⏰</div>
+                <div class="emoji emo1">⌚</div>
+            </div>
+            <h2 class="project-name">Arduino <br> digital clock</h2>
+            <p class="project-description">A digital clock made with arduino and 7 segment display <i>(one of my
+                    first electronics projects)</i></p>
+            <h4 class="links">Links</h4>
+            <div class="link-container">
+                <a class="gh-link link1 icon" target="_blank"
+                    href="https://github.com/ANIKETSHARMAGIT56/Arduino-digital-clock"><img src="images/github.svg"
+                        alt=""></a>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="emojicont">
+                <div class="emoji emo2">🥁</div>
+                <div class="emoji emo1">🎵</div>
+            </div>
+            <h2 class="project-name">Arduino <br> digital drumpad</h2>
+            <p class="project-description">An electronic drum made with Arduino and the driver code is written in
+                python.</p>
+            <h4 class="links">Links</h4>
+            <div class="link-container">
+                <a class="gh-link link1 icon" target="_blank"
+                    href="https://github.com/ANIKETSHARMAGIT56/diy-drumpad"><img src="images/github.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="emojicont">
+                <div class="emoji emo2">⚙️</div>
+                <div class="emoji emo1">💻</div>
+            </div>
+            <h2 class="project-name">Arch linux<br> configs</h2>
+            <p class="project-description">my arch linux configs uploaded to a repo for public use. just run 1
+                command and you're good to go.</p>
+            <h4 class="links">Links</h4>
+            <div class="link-container">
+                <a class="gh-link link1 icon" target="_blank" href="https://github.com/ANIKETSHARMAGIT56/myconfigs"><img
+                        src="images/github.svg" alt=""></a>
+            </div>
+        </div>
+
+        </div>
+    </section>
+    <form name="contact" method="POST" data-netlify="true">
+        <label>Your Name: <input type="text" name="name" /></label>
+        <label>Your Email: <input type="email" name="email" /></label>
+        <label>Your Role: <select name="role[]" multiple>
+                <option value="leader">Leader</option>
+                <option value="follower">Follower</option>
+            </select></label>
+        <label>Message: <textarea name="message"></textarea></label>
+        <button type="submit">Send</button>
+    </form>
+
+    <footer>
+        <a href="https://github.com">github</a>
+        licensed under GNU GPL license <br>
+    </footer>
 </body>
 
 </html>
