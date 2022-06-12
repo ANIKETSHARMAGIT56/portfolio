@@ -15,9 +15,11 @@
 <body>
     <nav>
         <h1>Aniket</h1>
-        <!-- <button></button> -->
-        <input id="button" type="checkbox">
-        <label for="button">&#9776;</label>
+        <div id="button">
+            <div class="stick" id="stick1"></div>
+            <div class="stick" id="stick2"></div>
+            <div class="stick" id="stick3"></div>
+        </div>
         <div id="navlinks">
             <a href="#head">
                 <p>Home</p>
@@ -264,20 +266,33 @@
 
         </div>
     </section>
-    <form name="contact" method="POST" data-netlify="true">
-        <label>Your Name: <input type="text" name="name" /></label>
-        <label>Your Email: <input type="email" name="email" /></label>
-        <label>Your Role: <select name="role[]" multiple>
-                <option value="leader">Leader</option>
-                <option value="follower">Follower</option>
-            </select></label>
-        <label>Message: <textarea name="message"></textarea></label>
-        <button type="submit">Send</button>
-    </form>
-
+    <section id="contact-me">
+        <h1>Contact me</h1>
+        <form name="contact" method="POST" data-netlify="true">
+            <label>Name</label>
+            <input type="text" id="form-name" name="name" />
+            <label>Email</label>
+            <input type="email" name="email" />
+            <label>Message</label>
+            <textarea name="message"></textarea>
+            <button id="bttn" type="submit"
+                onclick="document.getElementById('bttn').innerText='submitted'">Submit</button>
+        </form>
+    </section>
     <footer>
-        <a href="https://github.com">github</a>
-        licensed under GNU GPL license <br>
+        <div class="links">
+            <h2>links</h2>
+            <a target="_blank">discord</a>
+            <a taget="_blank" href="https://github.com">github</a>
+        </div>
+        <div class="links">
+            <h2>social</h2>
+            <a href="">discord: <br> aniket#0001</a>
+
+        </div>
+        <p>GNU GPL license</p>
+        <p>hosted with netlify</p>
+        <p>domain purchased from namecheap</p>
     </footer>
 </body>
 

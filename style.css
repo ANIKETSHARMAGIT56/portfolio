@@ -2,7 +2,8 @@
   color-scheme: dark;
 }
 
-h1, h2 {
+h1,
+h2 {
   background: linear-gradient(to right, #a51e1e, #3b59f5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -24,6 +25,7 @@ p {
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
   scrollbar-width: none;
+  box-sizing: border-box;
   /* Firefox */
 }
 
@@ -31,6 +33,7 @@ body {
   font-size: 2rem;
   display: flex;
   flex-flow: column;
+  background-color: #000000;
 }
 body .icon {
   width: 2em;
@@ -45,16 +48,17 @@ body nav {
   font-size: 0.5em;
   padding: 0.5rem 1rem 0.5rem 1rem;
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
   box-shadow: 0px 0px 20px 10px #000000;
-  justify-content: space-between;
 }
 body nav #button,
 body nav label {
+  align-self: center;
   display: none;
 }
 body nav h1 {
-  align-self: start;
+  align-self: center;
   justify-self: flex-start !important;
   font-size: 2em;
 }
@@ -82,7 +86,7 @@ body section {
   width: 100%;
 }
 body #head {
-  background-color: #000000;
+  position: relative;
   height: 100vh;
   grid-template-rows: 2fr 0.5fr 1fr 2fr 1fr;
 }
@@ -91,6 +95,7 @@ body #head .emoji {
   font-size: 1.5em;
 }
 body #head h1 {
+  font-weight: 1000;
   font-size: 1em;
   position: relative;
   justify-self: center;
@@ -116,6 +121,7 @@ body #head h2 {
 }
 body #head p {
   font-size: 0.4em;
+  z-index: 0;
 }
 body #head img {
   animation: downarrow 1s ease-out 0s infinite alternate;
@@ -259,52 +265,138 @@ body #ingi div {
   transition: 1s linear;
   animation: blobs 10s linear 0s infinite alternate;
 }
-body form {
+body #contact-me {
+  background-color: black;
+  width: 100%;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+body #contact-me form {
+  margin: 1rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
+  width: 90vw;
+  max-width: 20em;
+}
+body #contact-me input,
+body #contact-me textarea {
+  height: 2em;
+  text-align: start;
+  margin-bottom: 2em;
+  padding: 0.3em;
+  border: 2px solid #823eaa;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+}
+body #contact-me input:focus,
+body #contact-me textarea:focus {
+  border: none;
+  border: 2px solid #0084ff;
+}
+body #contact-me textarea {
+  height: 6em;
+}
+body #contact-me label {
+  font-size: 0.7em;
+  align-self: flex-start;
+}
+body #contact-me button {
+  margin-top: 0.2em;
+  align-self: flex-end;
+  font-size: 0.8em;
+  color: white;
+  background-color: #000000;
+  border-radius: 2rem;
+  transition: 0.2s linear;
+  padding: 0.1em 0.6em;
+  border: none;
+  border: 2px solid #8401ff;
+}
+body #contact-me button:hover {
+  background-color: #8401ff;
 }
 body footer {
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: center;
   flex-flow: column;
+  background-color: #0f0f0f;
+  grid-template-columns: 1fr 1fr;
+  padding: 1em 0em;
+  font-size: 0.5em;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+body footer p {
+  grid-column: 1/-1;
+}
+body footer .links {
+  width: max-content;
+  text-align: left;
+  margin-bottom: 3em;
+  align-self: start;
+  display: flex;
+  flex-flow: column;
+  gap: 0.5em;
+}
+body footer a {
+  color: rgb(206, 206, 206);
+  text-decoration: none;
 }
 
-@keyframes blobs {
-  0% {
-    border-radius: 22% 78% 28% 72%/25% 83% 17% 75%;
+@media (max-width: 600px) {
+  nav #button {
+    position: relative;
+    display: initial !important;
+    justify-self: end;
+    justify-content: space-evenly;
+    width: 2em;
+    height: 3em;
   }
-  10% {
-    border-radius: 22% 78% 67% 33%/50% 19% 81% 50%;
+  nav #button .stick {
+    height: 2px;
+    border-radius: 10px;
+    background: linear-gradient(to right bottom, #ff01aa, #0084ff);
+    width: 100%;
+    transition: 1s ease;
+    position: absolute;
   }
-  20% {
-    border-radius: 90% 10% 67% 33%/50% 19% 81% 50%;
+  nav #button #stick1 {
+    top: 33%;
   }
-  30% {
-    border-radius: 90% 10% 67% 33%/50% 19% 81% 50%;
+  nav #button #stick2 {
+    bottom: calc(50% - 2px);
   }
-  40% {
-    border-radius: 12% 88% 0% 100%/50% 59% 41% 50%;
+  nav #button #stick3 {
+    top: 66%;
   }
-  50% {
-    border-radius: 12% 88% 84% 16%/50% 59% 41% 50%;
+  nav #button:hover .stick {
+    height: 5px;
   }
-  60% {
-    border-radius: 82% 18% 84% 16%/12% 59% 41% 88%;
+  nav #button:hover #stick1 {
+    transform: rotate(45deg);
+    top: 50%;
+    bottom: 50%;
   }
-  70% {
-    border-radius: 82% 18% 84% 16%/12% 59% 41% 88%;
+  nav #button:hover #stick2 {
+    opacity: 0;
   }
-  80% {
-    border-radius: 24% 76% 33% 67%/69% 46% 54% 31%;
+  nav #button:hover #stick3 {
+    top: 50%;
+    bottom: 50%;
+    transform: rotate(-45deg);
   }
-  90% {
-    border-radius: 24% 76% 8% 92%/69% 46% 54% 31%;
+  nav label {
+    font-size: 1em;
+    height: 1em;
+    width: max-content;
+    display: inline !important;
   }
-  100% {
-    border-radius: 76% 24% 41% 59%/47% 83% 17% 53%;
+  nav #navlinks {
+    display: none !important;
   }
 }
 @keyframes typing {
