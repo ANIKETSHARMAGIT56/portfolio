@@ -25,7 +25,6 @@ p {
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
   scrollbar-width: none;
-  box-sizing: border-box;
   /* Firefox */
 }
 
@@ -348,6 +347,9 @@ body footer a {
 }
 
 @media (max-width: 600px) {
+  nav {
+    overflow: hidden;
+  }
   nav #button {
     position: relative;
     display: initial !important;
@@ -389,6 +391,12 @@ body footer a {
     bottom: 50%;
     transform: rotate(-45deg);
   }
+  nav #button:hover + #navlinks {
+    height: 10em !important;
+  }
+  nav #navlinks:hover {
+    height: 10em !important;
+  }
   nav label {
     font-size: 1em;
     height: 1em;
@@ -396,7 +404,12 @@ body footer a {
     display: inline !important;
   }
   nav #navlinks {
-    display: none !important;
+    transition: 1s ease;
+    overflow: hidden;
+    display: inline;
+    flex-flow: column;
+    grid-column: span 2;
+    height: 0px !important;
   }
 }
 @keyframes typing {

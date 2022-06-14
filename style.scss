@@ -446,10 +446,8 @@ body {
 }
 @media  (max-width:600px){
     nav{
-        border-radius: 1rem;
-
-    }
-    nav{
+        // grid-template-rows: 2rem 10rem;
+        overflow: hidden;
         #button{
             position: relative;
             display: initial !important;
@@ -493,7 +491,12 @@ body {
                 bottom:50%;
                 transform: rotate(-45deg);
             }
-
+            + #navlinks{
+                height: 10em !important;
+            }
+        }
+        #navlinks:hover{
+            height: 10em !important;
         }
         label{
             font-size: 1em;
@@ -503,7 +506,15 @@ body {
             // visibility:visible !important;
         }
         #navlinks{
-            display: none !important;
+            transition: 1s ease;
+            overflow: hidden;
+            display: inline;
+            flex-flow: column;
+            // height: 20rem;
+            grid-column: span 2;
+            height: 0px !important;
+            // height: 2rem;
+            // position: absolute;
         }
         // visibility: hidden;
     }
