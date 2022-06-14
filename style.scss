@@ -80,6 +80,9 @@ body {
             justify-self: flex-start !important;
             font-size: 2em;
         }
+        input[type="checkbox"]{
+            display: none;
+        }
 
         #navlinks {
             display: flex;
@@ -326,21 +329,6 @@ body {
         }
     }
 
-    #ingi {
-        height: 20vh;
-
-        div {
-            height: 6rem;
-            width: 6rem;
-
-            // border-radius: 63% 37% 70% 30% / 53% 51% 49% 47%;
-            // background-color: white;
-            background: linear-gradient(purple, rgb(255, 6, 180));
-            transition: 1s linear;
-            animation: blobs 10s linear 0s infinite alternate;
-        }
-    }
-
     #contact-me {
         background-color: black;
         width: 100%;
@@ -446,6 +434,7 @@ body {
 }
 @media  (max-width:600px){
     nav{
+        position: relative;
         // grid-template-rows: 2rem 10rem;
         overflow: hidden;
         #button{
@@ -459,7 +448,7 @@ body {
 
                 height:2px;
                 border-radius: 10px;
-                background: linear-gradient(to right bottom,#ff01aa,#0084ff);
+                background: linear-gradient(to right,#ff01aa,#0084ff);
                 width: 100%;
                 transition: 1s ease;
                 position: absolute;
@@ -474,9 +463,35 @@ body {
                 top: 66%;
             }
         }
-        #button:hover{
+        #navlinks{
+            transition: 1s ease;
+            overflow: hidden;
+            display: inline;
+            flex-flow: column;
+            // height: 20rem;
+            grid-column: span 2;
+            height: 0px !important;
+            // height: 2rem;
+            // position: absolute;
+        }
+        input[type="checkbox"]{
+            display: inline-block !important;
+            position: absolute;
+            align-self: flex-start;
+            margin-top: 1rem;
+            z-index: 10;
+            height: 2rem;
+            // visibility:hidden;
+            opacity: 0;
+            justify-self: end;
+            width: 4rem;
+        }
+        input[type="checkbox"]:checked ~ #navlinks{
+            height: 13em !important;
+        }
+        input[type="checkbox"]:checked ~ #button{
             .stick{
-                height: 5px;
+                height: 3px;
             }
             #stick1{
                 transform: rotate(45deg);
@@ -491,32 +506,13 @@ body {
                 bottom:50%;
                 transform: rotate(-45deg);
             }
-            + #navlinks{
-                height: 10em !important;
-            }
         }
-        #navlinks:hover{
-            height: 10em !important;
-        }
-        label{
-            font-size: 1em;
-            height: 1em;
-            width: max-content;
-            display: inline !important;
-            // visibility:visible !important;
-        }
-        #navlinks{
-            transition: 1s ease;
-            overflow: hidden;
-            display: inline;
-            flex-flow: column;
-            // height: 20rem;
-            grid-column: span 2;
-            height: 0px !important;
-            // height: 2rem;
-            // position: absolute;
-        }
-        // visibility: hidden;
+    }
+    .emo1{
+        display: none;
+    }
+    .emo2{
+        transform: rotate(0deg) !important;
     }
 }
 

@@ -61,6 +61,9 @@ body nav h1 {
   justify-self: flex-start !important;
   font-size: 2em;
 }
+body nav input[type=checkbox] {
+  display: none;
+}
 body nav #navlinks {
   display: flex;
   height: inherit;
@@ -254,16 +257,6 @@ body #creations .project-card .emojicont .emo1 {
 body #creations .project-card .emojicont .emo2 {
   transform: rotate(-20deg);
 }
-body #ingi {
-  height: 20vh;
-}
-body #ingi div {
-  height: 6rem;
-  width: 6rem;
-  background: linear-gradient(purple, rgb(255, 6, 180));
-  transition: 1s linear;
-  animation: blobs 10s linear 0s infinite alternate;
-}
 body #contact-me {
   background-color: black;
   width: 100%;
@@ -348,6 +341,7 @@ body footer a {
 
 @media (max-width: 600px) {
   nav {
+    position: relative;
     overflow: hidden;
   }
   nav #button {
@@ -361,7 +355,7 @@ body footer a {
   nav #button .stick {
     height: 2px;
     border-radius: 10px;
-    background: linear-gradient(to right bottom, #ff01aa, #0084ff);
+    background: linear-gradient(to right, #ff01aa, #0084ff);
     width: 100%;
     transition: 1s ease;
     position: absolute;
@@ -375,34 +369,6 @@ body footer a {
   nav #button #stick3 {
     top: 66%;
   }
-  nav #button:hover .stick {
-    height: 5px;
-  }
-  nav #button:hover #stick1 {
-    transform: rotate(45deg);
-    top: 50%;
-    bottom: 50%;
-  }
-  nav #button:hover #stick2 {
-    opacity: 0;
-  }
-  nav #button:hover #stick3 {
-    top: 50%;
-    bottom: 50%;
-    transform: rotate(-45deg);
-  }
-  nav #button:hover + #navlinks {
-    height: 10em !important;
-  }
-  nav #navlinks:hover {
-    height: 10em !important;
-  }
-  nav label {
-    font-size: 1em;
-    height: 1em;
-    width: max-content;
-    display: inline !important;
-  }
   nav #navlinks {
     transition: 1s ease;
     overflow: hidden;
@@ -410,6 +376,42 @@ body footer a {
     flex-flow: column;
     grid-column: span 2;
     height: 0px !important;
+  }
+  nav input[type=checkbox] {
+    display: inline-block !important;
+    position: absolute;
+    align-self: flex-start;
+    margin-top: 1rem;
+    z-index: 10;
+    height: 2rem;
+    opacity: 0;
+    justify-self: end;
+    width: 4rem;
+  }
+  nav input[type=checkbox]:checked ~ #navlinks {
+    height: 13em !important;
+  }
+  nav input[type=checkbox]:checked ~ #button .stick {
+    height: 3px;
+  }
+  nav input[type=checkbox]:checked ~ #button #stick1 {
+    transform: rotate(45deg);
+    top: 50%;
+    bottom: 50%;
+  }
+  nav input[type=checkbox]:checked ~ #button #stick2 {
+    opacity: 0;
+  }
+  nav input[type=checkbox]:checked ~ #button #stick3 {
+    top: 50%;
+    bottom: 50%;
+    transform: rotate(-45deg);
+  }
+  .emo1 {
+    display: none;
+  }
+  .emo2 {
+    transform: rotate(0deg) !important;
   }
 }
 @keyframes typing {
