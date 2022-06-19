@@ -170,8 +170,8 @@ body {
             cursor-blink 1s linear 1s 1,
             typing2 1s steps(var(--charactersn)) 2s 1 forwards,
             cursor-blink2 1s linear 3s 1;
-        }
-        #ijji {
+        }  
+        #greet {
             width: var(--charactersn);
             position: relative;
             text-align: center;
@@ -185,8 +185,9 @@ body {
                 text-align: center;
                 white-space: nowrap;
                 font-weight: 1000;
-                font-size: 1em;
+                font-size: 3em;
         }
+      
 
         h2 {
             font-size: 1.2em;

@@ -1,30 +1,30 @@
 const greetings = ["Bonjour", "Namaste","Hallo","Privet", "Konnichiwa","Hello","Ciao"];
-const elem = document.querySelector("#ijji")
+const elem = document.querySelector("#greet")
 const bdy = document.querySelector("body")
 let lang = 0
 let i = 0
-// let a;
-
-// changelang();
-let a = greetings[lang]
-lang++;
-bdy.className="";
-bdy.classList.add("ch"+ a.length)
-elem.innerHTML = a
 
 
+swaplang();
 elem.addEventListener("animationend", changelang)
+
+
+
+function swaplang(){
+    let a = greetings[lang]
+    bdy.className="";
+    bdy.classList.add("ch"+ a.length)
+    elem.innerHTML = a
+    lang++;
+}
+
+
 function changelang(){
     if (i == 3) {
         
         i = 0        
         
-        
-        a =greetings[lang];
-        bdy.className="";
-        bdy.classList.add("ch"+ a.length)
-        elem.innerHTML = a
-        lang++;
+        swaplang()
         
         
         if (lang==greetings.length){

@@ -149,7 +149,7 @@ body #head .emoji {
 body #head .cursor {
   animation: typing 1s steps(var(--charactersn)) 1 forwards, cursor-blink 1s linear 1s 1, typing2 1s steps(var(--charactersn)) 2s 1 forwards, cursor-blink2 1s linear 3s 1;
 }
-body #head #ijji {
+body #head #greet {
   width: var(--charactersn);
   position: relative;
   text-align: center;
