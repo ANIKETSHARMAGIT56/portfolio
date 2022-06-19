@@ -29,53 +29,53 @@ p {
 }
 
 .ch1 {
-  --charactersn:1;
-  --characters:1ch;
+  --charactersn: 1;
+  --characters: 1ch;
 }
 
 .ch2 {
-  --charactersn:2;
-  --characters:2ch;
+  --charactersn: 2;
+  --characters: 2ch;
 }
 
 .ch3 {
-  --charactersn:3;
-  --characters:3ch;
+  --charactersn: 3;
+  --characters: 3ch;
 }
 
 .ch4 {
-  --charactersn:4;
-  --characters:4ch;
+  --charactersn: 4;
+  --characters: 4ch;
 }
 
 .ch5 {
-  --charactersn:5;
-  --characters:5ch;
+  --charactersn: 5;
+  --characters: 5ch;
 }
 
 .ch6 {
-  --charactersn:6;
-  --characters:6ch;
+  --charactersn: 6;
+  --characters: 6ch;
 }
 
 .ch7 {
-  --charactersn:7;
-  --characters:7ch;
+  --charactersn: 7;
+  --characters: 7ch;
 }
 
 .ch8 {
-  --charactersn:8;
-  --characters:8ch;
+  --charactersn: 8;
+  --characters: 8ch;
 }
 
 .ch9 {
-  --charactersn:9;
-  --characters:9ch;
+  --charactersn: 9;
+  --characters: 9ch;
 }
 
 .ch10 {
-  --charactersn:10;
-  --characters:10ch;
+  --charactersn: 10;
+  --characters: 10ch;
 }
 
 body {
@@ -429,6 +429,9 @@ body footer a {
     opacity: 0;
     justify-self: end;
     width: 4rem;
+  }
+  nav input[type=checkbox]:hover {
+    cursor: pointer;
   }
   nav input[type=checkbox]:checked ~ #navlinks {
     height: 13em !important;

@@ -44,45 +44,55 @@ p {
     scrollbar-width: none;
     /* Firefox */
 }
-.ch1{
-    --charactersn:1;
-    --characters:1ch;
+
+.ch1 {
+    --charactersn: 1;
+    --characters: 1ch;
 }
-.ch2{
-    --charactersn:2;
-    --characters:2ch;
+
+.ch2 {
+    --charactersn: 2;
+    --characters: 2ch;
 }
-.ch3{
-    --charactersn:3;
-    --characters:3ch;
+
+.ch3 {
+    --charactersn: 3;
+    --characters: 3ch;
 }
-.ch4{
-    --charactersn:4;
-    --characters:4ch;
+
+.ch4 {
+    --charactersn: 4;
+    --characters: 4ch;
 }
-.ch5{
-    --charactersn:5;
-    --characters:5ch;
+
+.ch5 {
+    --charactersn: 5;
+    --characters: 5ch;
 }
-.ch6{
-    --charactersn:6;
-    --characters:6ch;
+
+.ch6 {
+    --charactersn: 6;
+    --characters: 6ch;
 }
-.ch7{
-    --charactersn:7;
-    --characters:7ch;
+
+.ch7 {
+    --charactersn: 7;
+    --characters: 7ch;
 }
-.ch8{
-    --charactersn:8;
-    --characters:8ch;
+
+.ch8 {
+    --charactersn: 8;
+    --characters: 8ch;
 }
-.ch9{
-    --charactersn:9;
-    --characters:9ch;
+
+.ch9 {
+    --charactersn: 9;
+    --characters: 9ch;
 }
-.ch10{
-    --charactersn:10;
-    --characters:10ch;
+
+.ch10 {
+    --charactersn: 10;
+    --characters: 10ch;
 }
 
 
@@ -93,6 +103,7 @@ body {
     display: flex;
     flex-flow: column;
     background-color: #000000;
+
     // overflow: hidden;
     .icon {
         width: 2em;
@@ -108,7 +119,7 @@ body {
         font-size: 0.5em;
         padding: 0.5rem 1rem 0.5rem 1rem;
         display: grid;
-        align-items:center;
+        align-items: center;
         grid-template-columns: 1fr 1fr;
         box-shadow: 0px 0px 20px 10px #000000;
 
@@ -124,9 +135,11 @@ body {
             justify-self: flex-start !important;
             font-size: 2em;
         }
-        input[type="checkbox"]{
+
+        input[type="checkbox"] {
             display: none;
         }
+
         #navlinks {
             display: flex;
             height: inherit;
@@ -165,19 +178,21 @@ body {
             line-height: 2;
             font-size: 1.5em;
         }
-        .cursor{
-            animation: typing 1s steps(var(--charactersn)) 1 forwards ,
-            cursor-blink 1s linear 1s 1,
-            typing2 1s steps(var(--charactersn)) 2s 1 forwards,
-            cursor-blink2 1s linear 3s 1;
+
+        .cursor {
+            animation: typing 1s steps(var(--charactersn)) 1 forwards,
+                cursor-blink 1s linear 1s 1,
+                typing2 1s steps(var(--charactersn)) 2s 1 forwards,
+                cursor-blink2 1s linear 3s 1;
         }
+
         #greet {
             width: var(--charactersn);
             position: relative;
-            text-align: center;            
-                white-space: nowrap;
-                font-weight: 500;
-                font-size: 1.3em;
+            text-align: center;
+            white-space: nowrap;
+            font-weight: 500;
+            font-size: 1.3em;
         }
 
         h2 {
@@ -442,16 +457,17 @@ body {
         font-size: 0.5em;
         // gap: 1em;
         justify-items: center;
-        align-items:center;
+        align-items: center;
         text-align: center;
-        p{
+
+        p {
             grid-column: 1/-1;
         }
 
         .links {
             // align-self: center;
             width: max-content;
-            text-align:left;
+            text-align: left;
             margin-bottom: 3em;
             align-self: start;
             display: flex;
@@ -468,38 +484,45 @@ body {
 
     }
 }
-@media  (max-width:600px){
-    nav{
+
+@media (max-width:600px) {
+    nav {
         position: relative;
         // grid-template-rows: 2rem 10rem;
         overflow: hidden;
-        #button{
+
+        #button {
             position: relative;
             display: initial !important;
             justify-self: end;
             justify-content: space-evenly;
             width: 2em;
             height: 3em;
-            .stick{
 
-                height:2px;
+            .stick {
+
+                height: 2px;
                 border-radius: 10px;
-                background: linear-gradient(to right,#ff01aa,#0084ff);
+                background: linear-gradient(to right, #ff01aa, #0084ff);
                 width: 100%;
                 transition: 1s ease;
                 position: absolute;
             }
-            #stick1{
-                top:33%;
+
+            #stick1 {
+                top: 33%;
             }
-            #stick2{
-                bottom:calc(50% - 2px);
+
+            #stick2 {
+                bottom: calc(50% - 2px);
             }
-            #stick3{
+
+            #stick3 {
                 top: 66%;
             }
         }
-        #navlinks{
+
+        #navlinks {
             transition: 1s ease;
             overflow: hidden;
             display: inline;
@@ -510,7 +533,8 @@ body {
             // height: 2rem;
             // position: absolute;
         }
-        input[type="checkbox"]{
+
+        input[type="checkbox"] {
             display: inline-block !important;
             position: absolute;
             align-self: flex-start;
@@ -522,32 +546,42 @@ body {
             justify-self: end;
             width: 4rem;
         }
-        input[type="checkbox"]:checked ~ #navlinks{
+        input[type="checkbox"]:hover{
+            cursor: pointer;
+        }
+
+        input[type="checkbox"]:checked~#navlinks {
             height: 13em !important;
         }
-        input[type="checkbox"]:checked ~ #button{
-            .stick{
+
+        input[type="checkbox"]:checked~#button {
+            .stick {
                 height: 3px;
             }
-            #stick1{
+
+            #stick1 {
                 transform: rotate(45deg);
                 top: 50%;
-                bottom:50%;
+                bottom: 50%;
             }
-            #stick2{
+
+            #stick2 {
                 opacity: 0;
             }
-            #stick3{
+
+            #stick3 {
                 top: 50%;
-                bottom:50%;
+                bottom: 50%;
                 transform: rotate(-45deg);
             }
         }
     }
-    .emo1{
+
+    .emo1 {
         display: none;
     }
-    .emo2{
+
+    .emo2 {
         transform: rotate(0deg) !important;
     }
 }
@@ -556,28 +590,30 @@ body {
     from {
         width: 0px;
         border-right: 1px solid white;
-        
+
     }
-    
+
     to {
         width: var(--characters);
         border-right: 1px solid white;
 
     }
 }
+
 @keyframes typing2 {
     from {
         border-right: 1px solid white;
 
         width: var(--characters);
     }
-    
+
     to {
         border-right: 1px solid white;
 
         width: 0px;
     }
 }
+
 @keyframes fade-in {
     to {
         opacity: 1;
@@ -594,17 +630,20 @@ body {
 }
 
 @keyframes cursor-blink {
-    from{
+    from {
         border-right: 0;
     }
+
     to {
         border-right: 1px solid white;
     }
 }
+
 @keyframes cursor-blink2 {
-    from{
+    from {
         border-right: 0;
     }
+
     to {
         border-right: 1px solid white;
     }
