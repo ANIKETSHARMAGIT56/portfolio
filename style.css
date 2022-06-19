@@ -153,16 +153,9 @@ body #head #greet {
   width: var(--charactersn);
   position: relative;
   text-align: center;
-  overflow: none;
-  justify-self: center;
-  text-align: center;
-  position: relative;
-  width: max-content;
-  align-self: center;
-  text-align: center;
   white-space: nowrap;
-  font-weight: 1000;
-  font-size: 1em;
+  font-weight: 500;
+  font-size: 1.3em;
 }
 body #head h2 {
   font-size: 1.2em;

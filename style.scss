@@ -170,24 +170,15 @@ body {
             cursor-blink 1s linear 1s 1,
             typing2 1s steps(var(--charactersn)) 2s 1 forwards,
             cursor-blink2 1s linear 3s 1;
-        }  
+        }
         #greet {
             width: var(--charactersn);
             position: relative;
-            text-align: center;
-            overflow: none;
-            justify-self: center;
-            text-align: center;
-            position: relative;
-            width: max-content;
-            
-                align-self: center;
-                text-align: center;
+            text-align: center;            
                 white-space: nowrap;
-                font-weight: 1000;
-                font-size: 3em;
+                font-weight: 500;
+                font-size: 1.3em;
         }
-      
 
         h2 {
             font-size: 1.2em;
