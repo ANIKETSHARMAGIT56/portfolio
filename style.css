@@ -28,6 +28,56 @@ p {
   /* Firefox */
 }
 
+.ch1 {
+  --charactersn:1;
+  --characters:1ch;
+}
+
+.ch2 {
+  --charactersn:2;
+  --characters:2ch;
+}
+
+.ch3 {
+  --charactersn:3;
+  --characters:3ch;
+}
+
+.ch4 {
+  --charactersn:4;
+  --characters:4ch;
+}
+
+.ch5 {
+  --charactersn:5;
+  --characters:5ch;
+}
+
+.ch6 {
+  --charactersn:6;
+  --characters:6ch;
+}
+
+.ch7 {
+  --charactersn:7;
+  --characters:7ch;
+}
+
+.ch8 {
+  --charactersn:8;
+  --characters:8ch;
+}
+
+.ch9 {
+  --charactersn:9;
+  --characters:9ch;
+}
+
+.ch10 {
+  --charactersn:10;
+  --characters:10ch;
+}
+
 body {
   font-size: 2rem;
   display: flex;
@@ -96,24 +146,23 @@ body #head .emoji {
   line-height: 2;
   font-size: 1.5em;
 }
-body #head h1 {
-  font-weight: 1000;
-  font-size: 1em;
+body #head .cursor {
+  animation: typing 1s steps(var(--charactersn)) 1 forwards, cursor-blink 1s linear 1s 1, typing2 1s steps(var(--charactersn)) 2s 1 forwards, cursor-blink2 1s linear 3s 1;
+}
+body #head #ijji {
+  width: var(--charactersn);
   position: relative;
+  text-align: center;
+  overflow: none;
   justify-self: center;
   text-align: center;
   position: relative;
   width: max-content;
-}
-body #head h1::before {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  content: "";
-  background-color: #000000;
-  border-left: 1px solid white;
-  animation: typing 2s steps(10) forwards, cursor-blink 1s 2s infinite;
+  align-self: center;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 1000;
+  font-size: 1em;
 }
 body #head h2 {
   font-size: 1.2em;
@@ -416,9 +465,21 @@ body footer a {
 }
 @keyframes typing {
   from {
-    width: 100%;
+    width: 0px;
+    border-right: 1px solid white;
   }
   to {
+    width: var(--characters);
+    border-right: 1px solid white;
+  }
+}
+@keyframes typing2 {
+  from {
+    border-right: 1px solid white;
+    width: var(--characters);
+  }
+  to {
+    border-right: 1px solid white;
     width: 0px;
   }
 }
@@ -434,8 +495,19 @@ body footer a {
   }
 }
 @keyframes cursor-blink {
+  from {
+    border-right: 0;
+  }
   to {
-    border-left: 0;
+    border-right: 1px solid white;
+  }
+}
+@keyframes cursor-blink2 {
+  from {
+    border-right: 0;
+  }
+  to {
+    border-right: 1px solid white;
   }
 }
 @keyframes gradientstrobe {
