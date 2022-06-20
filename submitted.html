@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,18 +8,20 @@
     <title>Thanks</title>
 </head>
 <style>
-    *{
+    * {
         margin: 0;
         padding: 0;
         color-scheme: dark;
     }
-    h1{
+
+    h1 {
         font-size: 2rem;
         background: linear-gradient(to right, #a51e1e, #3b59f5);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-    body{
+
+    body {
         font-family: monospace;
         background-color: black;
         display: flex;
@@ -27,19 +30,48 @@
         justify-content: center;
         height: 100vh;
     }
-    p{
+    body div#first{
         position: absolute;
-        bottom: 1em;
-        right: 1em;
-        color:rgb(158, 158, 158);
-        /* background: linear-gradient(to right, #a51e1e, #3b59f5);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; */
+        animation: nothing 2s linear 0s 1 forwards;
+    }
+    body div#second {
+        position: absolute;
+        opacity: 0;
+        animation: nothing2 2s linear 2s 1 forwards;
+    }
+    img{
+        height: 5rem;
+        width: 5rem;
+    }
+
+    @keyframes nothing {
+        to {
+            opacity: 0;
+        }
+    }
+    @keyframes nothing2 {
+        to{
+            opacity: 1;
+            z-index: 100;
+        }
     }
 </style>
+
 <body>
-    <h1>thanks for contacting me</h1>
-    <h1>Have a great day</h1>
-    <a href="https://www.youtube.com/watch?v=xvFZjo5Pg "><p>click here for a surprise</p></a>
+    <div id="first">
+        <h1>thanks for contacting me</h1>
+        <h1>Have a great day</h1>
+    </div>
+    <div id="second">
+        <h1>but before that</h1>
+        <h1>enjoy the rickroll</h1>
+        <img src="images/Trollface_non-free.png" alt="">
+    </div>
 </body>
+<script>
+    document.querySelector("div#second").addEventListener("animationend", rickroll => {
+        window.location.replace("https://www.youtube.com/watch?v=xvFZjo5PgG0");
+    })
+</script>
+
 </html>
