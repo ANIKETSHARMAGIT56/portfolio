@@ -1,12 +1,44 @@
-:root {
-  color-scheme: dark;
+body {
+  --body-bg: #00000000;
+  --intro-background: #5f5f5f00;
+  --tech-background: #ffffff00;
+  --tech-card-background: #ffffff06;
+  --tech-container-background: #00000000;
+  --tech-progress-bar-gutter: #4141413b;
+  --creations-background: #66666600;
+  --creations-project-background: #c7c7c715;
+  --contact-me-background: #00000000;
+  --submit-button-inactive: #00000000;
+  --input-box-color: #6969692a;
+  --footer-background: #49494909;
+}
+
+.darkbody {
+  --nav-background: #000000;
+  --cursor-color: white;
+  --para-color: #c5c5c5;
+  --submit-button-text: #c5c5c5;
+  --input-label-color: #c5c5c5;
+  --footer-text: #c5c5c5;
+}
+
+.lightbody {
+  --nav-background: #ffffff;
+  --cursor-color: rgb(0, 0, 0);
+  --para-color: #000000;
+  --submit-button-text: #000000;
+  --input-label-color: #030303;
+  --footer-text: #000000;
 }
 
 h1,
 h2 {
+  transition: color 1s ease;
   background: linear-gradient(to right, #a51e1e, #3b59f5);
   -webkit-background-clip: text;
+  -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 p {
@@ -16,6 +48,11 @@ p {
 }
 
 * {
+  transition: color 1s ease;
+  --theme-transition: 1.5s;
+  transition: background-color var(--theme-transition) ease;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   padding: 0;
   margin: 0;
   font-family: monospace;
@@ -79,6 +116,7 @@ p {
 }
 
 body {
+  z-index: 0;
   font-size: 2rem;
   display: flex;
   flex-flow: column;
@@ -99,7 +137,6 @@ body nav {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;
-  box-shadow: 0px 0px 20px 10px #000000;
 }
 body nav #button,
 body nav label {
@@ -127,7 +164,6 @@ body nav #navlinks a {
   display: flex;
   text-align: center;
   align-items: center;
-  transition: 0.4s ease;
   justify-content: center;
 }
 body section {
@@ -136,6 +172,42 @@ body section {
   align-items: center;
   justify-items: center;
   width: 100%;
+}
+body #themeswitcher {
+  background-color: var(--body-bg);
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: transparent;
+  height: 3rem;
+  width: 3rem;
+  position: fixed;
+  z-index: 1000;
+  top: 4.5rem;
+  right: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #themefilter {
+  background-color: black;
+  z-index: -1000;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 0rem;
+  width: 0rem;
+  position: fixed;
+  top: 5.5rem;
+  transition: var(--theme-transition) ease-in-out;
+  right: 2rem;
+  border-radius: 50%;
+}
+body .themefilteranim {
+  height: 3rem !important;
+  width: 3rem !important;
+  transition: 0.5s ease;
+  transform: scale(150);
+  background-color: #000 !important;
 }
 body #head {
   position: relative;
@@ -147,7 +219,8 @@ body #head .emoji {
   font-size: 1.5em;
 }
 body #head .cursor {
-  animation: typing 1s steps(var(--charactersn)) 1 forwards, cursor-blink 1s linear 1s 1, typing2 1s steps(var(--charactersn)) 2s 1 forwards, cursor-blink2 1s linear 3s 1;
+  -webkit-animation: typing 1s steps(var(--charactersn)) 1 forwards, cursor-blink 1s linear 1s 1, typing2 1s steps(var(--charactersn)) 2s 1 forwards, cursor-blink2 1s linear 3s 1;
+          animation: typing 1s steps(var(--charactersn)) 1 forwards, cursor-blink 1s linear 1s 1, typing2 1s steps(var(--charactersn)) 2s 1 forwards, cursor-blink2 1s linear 3s 1;
 }
 body #head #greet {
   width: var(--charactersn);
@@ -161,16 +234,20 @@ body #head h2 {
   font-size: 1.2em;
   opacity: 0;
   transform: translateY(10vw);
-  animation: fade-in 1s 2s ease forwards;
+  -webkit-animation: fade-in 1s 2s ease forwards;
+          animation: fade-in 1s 2s ease forwards;
 }
 body #head p {
   font-size: 0.4em;
   z-index: 0;
 }
 body #head img {
-  animation: downarrow 1s ease-out 0s infinite alternate;
+  -webkit-animation: downarrow 1s ease-out 0s infinite alternate;
+          animation: downarrow 1s ease-out 0s infinite alternate;
 }
 body #intro {
+  border-bottom: 2px solid #ff00ff;
+  border-top: 2px solid #ff00ff;
   line-height: 3;
   text-align: center;
   background-color: rgb(15, 15, 15);
@@ -187,7 +264,8 @@ body #intro .emoji {
   font-size: 1.5em;
 }
 body #intro img {
-  animation: downarrow 1s ease-out 0s infinite alternate;
+  -webkit-animation: downarrow 1s ease-out 0s infinite alternate;
+          animation: downarrow 1s ease-out 0s infinite alternate;
 }
 body #tech {
   padding: 5rem 0rem 2rem 0rem;
@@ -207,15 +285,17 @@ body #tech .tech-card {
   padding: 2rem 0rem 2rem 0rem;
   max-width: 30em;
   width: 90vw;
-  background-color: #000000;
-  box-shadow: 0px 0px 10px 0px #000;
-  animation: strobe 5s ease 0s infinite alternate;
+  background-color: var(--tech-card-background);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.37);
+  -webkit-animation: strobe 5s ease 0s infinite alternate;
+          animation: strobe 5s ease 0s infinite alternate;
 }
 body #tech .tech-card .tech-cont {
   align-self: center;
   justify-self: center;
   width: 95%;
-  background-color: rgba(255, 255, 255, 0.048);
+  border: 1px solid rgba(95, 95, 95, 0.267);
+  background-color: var(--tech-container-background);
   align-items: center;
   flex-flow: column;
   display: flex;
@@ -244,10 +324,12 @@ body #tech .tech-card .tech-cont .progress-bar {
   display: flex;
   background: linear-gradient(90deg, #ff3d6d, #ea4aaa 17%, #e14bff 34%, #ff01aa 51%, #ff3d8e 68%, #ea4aaa 85%, #b34bff);
   background-size: 300% 100%;
-  animation: gradientstrobe linear 4s infinite forwards;
+  -webkit-animation: gradientstrobe linear 4s infinite forwards;
+          animation: gradientstrobe linear 4s infinite forwards;
   transition: 1s;
 }
 body #creations {
+  border-top: 1px solid #ff00ff;
   width: 100%;
   padding-top: 2em;
   padding-bottom: 3%;
@@ -285,8 +367,7 @@ body #creations .project-card {
   display: flex;
   flex-flow: column;
   gap: 1em;
-  border: 1px solid black;
-  box-shadow: 0px 0px 6px 1px black;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.438);
 }
 body #creations .project-card .emojicont {
   display: flex;
@@ -369,6 +450,8 @@ body footer p {
   grid-column: 1/-1;
 }
 body footer .links {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   text-align: left;
   margin-bottom: 3em;
@@ -464,10 +547,21 @@ body footer a {
   }
   footer .links {
     align-items: center;
-    columns: 1/-1 !important;
+    -moz-columns: 1/-1 !important;
+         columns: 1/-1 !important;
   }
   footer p {
     align-self: center;
+  }
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0px;
+    border-right: 1px solid var(--cursor-color);
+  }
+  to {
+    width: var(--characters);
+    border-right: 1px solid var(--cursor-color);
   }
 }
 @keyframes typing {
@@ -480,6 +574,16 @@ body footer a {
     border-right: 1px solid white;
   }
 }
+@-webkit-keyframes typing2 {
+  from {
+    border-right: 1px solid var(--cursor-color);
+    width: var(--characters);
+  }
+  to {
+    border-right: 1px solid var(--cursor-color);
+    width: 0px;
+  }
+}
 @keyframes typing2 {
   from {
     border-right: 1px solid white;
@@ -490,15 +594,34 @@ body footer a {
     width: 0px;
   }
 }
+@-webkit-keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes fade-in {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+@-webkit-keyframes downarrow {
+  to {
+    transform: translateY(20%);
+  }
+}
 @keyframes downarrow {
   to {
     transform: translateY(20%);
+  }
+}
+@-webkit-keyframes cursor-blink {
+  from {
+    border-right: 0;
+  }
+  to {
+    border-right: 1px solid var(--cursor-color);
   }
 }
 @keyframes cursor-blink {
@@ -509,12 +632,28 @@ body footer a {
     border-right: 1px solid white;
   }
 }
+@-webkit-keyframes cursor-blink2 {
+  from {
+    border-right: 0;
+  }
+  to {
+    border-right: 1px solid var(--cursor-color);
+  }
+}
 @keyframes cursor-blink2 {
   from {
     border-right: 0;
   }
   to {
     border-right: 1px solid white;
+  }
+}
+@-webkit-keyframes gradientstrobe {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 100%;
   }
 }
 @keyframes gradientstrobe {
@@ -524,6 +663,4 @@ body footer a {
   to {
     background-position: 100%;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

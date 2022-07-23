@@ -7,18 +7,57 @@ $pgradient-blue: rgba(244, 234, 255, 0.649);
 
 $body-bg: #000000;
 
-:root {
-    color-scheme: dark;
+
+body {
+    --body-bg: #00000000;
+    
+
+    --intro-background: #5f5f5f00;
+
+
+    --tech-background: #ffffff00;
+    --tech-card-background: #ffffff06;
+    --tech-container-background: #00000000;
+    --tech-progress-bar-gutter: #4141413b;
+
+    --creations-background: #66666600;
+    --creations-project-background: #c7c7c715;
+
+    --contact-me-background: #00000000;
+    --submit-button-inactive: #00000000;
+    --input-box-color: #6969692a;
+    
+    --footer-background: #49494909;
+}
+.darkbody{
+    --nav-background: #000000;
+    --cursor-color: white;
+    --para-color: #c5c5c5;
+    --submit-button-text: #c5c5c5;
+    --input-label-color: #c5c5c5;
+    --footer-text: #c5c5c5;
+
 }
 
+.lightbody {
+    --nav-background: #ffffff;
+    --cursor-color: rgb(0, 0, 0);
+    --para-color: #000000;
+    --submit-button-text: #000000;
+    --input-label-color: #030303;
+    --footer-text: #000000;
 
+}
 
 
 h1,
 h2 {
+    transition: color 1s ease;
     background: linear-gradient(to right, $hgradient-red, $hgradient-blue);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }
 
 p {
@@ -28,6 +67,11 @@ p {
 }
 
 * {
+    transition: color 1s ease;
+    --theme-transition: 1.5s;
+    transition: background-color var(--theme-transition) ease;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     padding: 0;
     margin: 0;
     font-family: monospace;
@@ -98,6 +142,7 @@ p {
 
 body {
     // --charactersn:10;
+    z-index: 0;
     // --characters:10ch;
     font-size: 2rem;
     display: flex;
@@ -121,7 +166,7 @@ body {
         display: grid;
         align-items: center;
         grid-template-columns: 1fr 1fr;
-        box-shadow: 0px 0px 20px 10px #000000;
+        // box-shadow: 0px 0px 3px 0px #000000;
 
 
         #button,
@@ -153,7 +198,7 @@ body {
                 display: flex;
                 text-align: center;
                 align-items: center;
-                transition: 0.4s ease;
+                // transition:  0.4s ease;
                 justify-content: center;
             }
         }
@@ -167,7 +212,57 @@ body {
         width: 100%;
     }
 
+    #themeswitcher {
+        background-color: var(--body-bg);
+        overflow: hidden;
+        // transition: 1s ease;
+        box-sizing: border-box;
+        background-color: transparent;
+        height: 3rem;
+        width: 3rem;
+        position: fixed;
+        z-index: 1000;
+        top: 4.5rem;
+        right: 0.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #themefilter {
+        background-color: black;
+        z-index: -1000;
+        overflow: hidden;
+
+        box-sizing: border-box;
+        // background-color: transparent;
+        height: 0rem;
+        width: 0rem;
+        position: fixed;
+        // z-index: 999;
+        top: 5.5rem;
+        transition: var(--theme-transition) ease-in-out;
+        right: 2rem;
+        border-radius: 50%;
+        // opacity: 1;
+    }
+
+    .themefilteranim {
+        height: 3rem !important;
+        width: 3rem !important;
+        
+        transition: 0.5s ease;
+        // animation: fillviewport 1s ease 0s 1 forwards;
+        transform: scale(150);
+        background-color: #000 !important;
+        // opacity: 0 !important;
+        // visibility: hidden;
+    }
+
     #head {
+        // border-bottom:2px solid #ff01aa;
         position: relative;
         // background-color: #000000;
         // background-color: $body-bg;
@@ -213,6 +308,13 @@ body {
     }
 
     #intro {
+        border-bottom:2px solid #ff00ff;
+        border-top:2px solid #ff00ff;
+        // border-radius: 1rem;
+        // box-shadow: 1px 2px 10px #823eaa;
+        // box-shadow: 0 0px 10px -1px  #ad0096,
+        // inset 0 -1px 10px -5px #bb00a2;
+
         line-height: 3;
         // box-shadow: 0px 0px 10px 5px #000000;
         text-align: center;
@@ -259,15 +361,16 @@ body {
             max-width: 30em;
             width: 90vw;
 
-            background-color: #000000;
-            box-shadow: 0px 0px 10px 0px #000;
+            background-color: var(--tech-card-background);
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.37);
             animation: strobe 5s ease 0s infinite alternate;
 
             .tech-cont {
                 align-self: center;
                 justify-self: center;
                 width: 95%;
-                background-color: rgba(255, 255, 255, 0.048);
+                border: 1px solid rgba(95, 95, 95, 0.267);
+                background-color: var(--tech-container-background);
                 align-items: center;
                 flex-flow: column;
                 display: flex;
@@ -318,6 +421,8 @@ body {
 
 
     #creations {
+        // color-scheme: dark;
+        border-top: 1px solid #ff00ff;
         width: 100%;
         padding-top: 2em;
         padding-bottom: 3%;
@@ -360,8 +465,8 @@ body {
             display: flex;
             flex-flow: column;
             gap: 1em;
-            border: 1px solid black;
-            box-shadow: 0px 0px 6px 1px black;
+
+            box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.438);
 
             .emojicont {
                 display: flex;
