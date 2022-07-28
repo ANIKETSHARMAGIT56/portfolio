@@ -5,7 +5,7 @@ $pgradient-red: rgba(255, 255, 255, 0.708);
 $pgradient-blue: rgba(244, 234, 255, 0.649);
 
 
-$body-bg: #000000;
+// $body-bg: #000000;
 
 
 body {
@@ -60,14 +60,7 @@ h2 {
     -moz-text-fill-color: transparent;
 }
 
-p {
-    background: linear-gradient(to right, $pgradient-red, $pgradient-blue);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 * {
-    transition: color 1s ease;
     --theme-transition: 1.5s;
     transition: background-color var(--theme-transition) ease;
     -ms-overflow-style: none;
@@ -77,10 +70,10 @@ p {
     font-family: monospace;
     scroll-behavior: smooth;
 }
-
-// *::-webkit-scrollbar {
-//     display: none;
-//   }
+p{
+    color: var(--para-color);
+    transition: color 1s ease;
+}
 
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
@@ -141,13 +134,14 @@ p {
 
 
 body {
+
     // --charactersn:10;
     z-index: 0;
     // --characters:10ch;
     font-size: 2rem;
     display: flex;
     flex-flow: column;
-    background-color: #000000;
+    // background-color: black;
 
     // overflow: hidden;
     .icon {
@@ -159,7 +153,7 @@ body {
         left: 0;
         right: 0;
         position: fixed;
-        background-color: rgb(28, 28, 28);
+        background-color:var(--nav-background);
         z-index: 1;
         font-size: 0.5em;
         padding: 0.5rem 1rem 0.5rem 1rem;
@@ -191,7 +185,7 @@ body {
             justify-content: space-evenly;
             align-items: center;
             gap: 1rem;
-            -webkit-text-fill-color: white;
+            // -webkit-text-fill-color: white;
 
             a {
                 text-decoration: none;
@@ -213,7 +207,7 @@ body {
     }
 
     #themeswitcher {
-        background-color: var(--body-bg);
+        background-color:black;
         overflow: hidden;
         // transition: 1s ease;
         box-sizing: border-box;
@@ -265,7 +259,7 @@ body {
         // border-bottom:2px solid #ff01aa;
         position: relative;
         // background-color: #000000;
-        // background-color: $body-bg;
+        background-color: var(--body-bg);
         height: 100vh;
         grid-template-rows: 2fr 0.5fr 1fr 2fr 1fr;
 
@@ -310,15 +304,9 @@ body {
     #intro {
         border-bottom:2px solid #ff00ff;
         border-top:2px solid #ff00ff;
-        // border-radius: 1rem;
-        // box-shadow: 1px 2px 10px #823eaa;
-        // box-shadow: 0 0px 10px -1px  #ad0096,
-        // inset 0 -1px 10px -5px #bb00a2;
-
         line-height: 3;
-        // box-shadow: 0px 0px 10px 5px #000000;
         text-align: center;
-        background-color: rgb(15, 15, 15);
+        background-color: var(--intro-background);
         grid-template-rows: 1fr 1fr 1fr 1fr;
         height: 100vh;
 
@@ -343,7 +331,7 @@ body {
     #tech {
         padding: 5rem 0rem 2rem 0rem;
         gap: 3rem;
-        background-color: #0a0a0a;
+        background-color: var(--tech-background);
 
         h1 {
             font-size: 1em;
@@ -394,7 +382,7 @@ body {
                     grid-column: span 2;
                     width: 100%;
                     height: 1rem;
-                    background: rgba(255, 255, 255, 0.05);
+                    background: var(--tech-progress-bar-gutter);
                     overflow: hidden;
                     width: 100%;
                 }
@@ -429,7 +417,7 @@ body {
         gap: 2em;
         align-items: center;
         justify-items: center;
-        background-color: rgb(0, 0, 0);
+        background-color:var(--creations-background);
 
         img {
             width: 1em;
@@ -458,7 +446,7 @@ body {
         }
 
         .project-card {
-            background-color: #0f0f0f;
+            background-color: var(--creations-project-background);
             padding: 0.5em 0em 0.5em 0em;
             max-width: 30em;
             width: 95%;
@@ -486,7 +474,7 @@ body {
     }
 
     #contact-me {
-        background-color: black;
+        background-color: var(--contact-me-background);
         width: 100%;
         margin-top: 4em;
         margin-bottom: 4em;
@@ -513,6 +501,7 @@ body {
             width: 100%;
             max-width: 100%;
             min-width: 100%;
+            background-color: var(--input-box-color);
         }
 
         input:focus,
@@ -527,6 +516,8 @@ body {
         }
 
         label {
+            transition: var(--theme-transition) ease;
+            color: var(--input-label-color);
             font-size: 0.7em;
             align-self: flex-start;
         }
@@ -536,7 +527,8 @@ body {
             align-self: flex-end;
             font-size: 0.8em;
             color: white;
-            background-color: #000000;
+            background-color: transparent;
+            color: var(--para-color);
             // font-weight: bold;
             border-radius: 2rem;
             transition: 0.2s linear;
@@ -555,7 +547,7 @@ body {
         display: grid;
         align-items: center;
         flex-flow: column;
-        background-color: #0f0f0f;
+        background-color: var(--footer-background);
         grid-template-columns: 1fr 1fr;
         // grid-template-rows: 1fr 2em;
         padding: 1em 0em;
@@ -568,6 +560,7 @@ body {
 
         p {
             grid-column: 1/-1;
+
 
         }
 
@@ -583,7 +576,8 @@ body {
         }
 
         a {
-            color: rgb(206, 206, 206);
+            transition: var(--theme-transition) ease ;
+            color: var(--para-color);
             text-decoration: none;
         }
 

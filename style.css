@@ -41,14 +41,7 @@ h2 {
   -moz-text-fill-color: transparent;
 }
 
-p {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.708), rgba(244, 234, 255, 0.649));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 * {
-  transition: color 1s ease;
   --theme-transition: 1.5s;
   transition: background-color var(--theme-transition) ease;
   -ms-overflow-style: none;
@@ -57,6 +50,11 @@ p {
   margin: 0;
   font-family: monospace;
   scroll-behavior: smooth;
+}
+
+p {
+  color: var(--para-color);
+  transition: color 1s ease;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -120,7 +118,6 @@ body {
   font-size: 2rem;
   display: flex;
   flex-flow: column;
-  background-color: #000000;
 }
 body .icon {
   width: 2em;
@@ -130,7 +127,7 @@ body nav {
   left: 0;
   right: 0;
   position: fixed;
-  background-color: rgb(28, 28, 28);
+  background-color: var(--nav-background);
   z-index: 1;
   font-size: 0.5em;
   padding: 0.5rem 1rem 0.5rem 1rem;
@@ -157,7 +154,6 @@ body nav #navlinks {
   justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
-  -webkit-text-fill-color: white;
 }
 body nav #navlinks a {
   text-decoration: none;
@@ -174,7 +170,7 @@ body section {
   width: 100%;
 }
 body #themeswitcher {
-  background-color: var(--body-bg);
+  background-color: black;
   overflow: hidden;
   box-sizing: border-box;
   background-color: transparent;
@@ -211,6 +207,7 @@ body .themefilteranim {
 }
 body #head {
   position: relative;
+  background-color: var(--body-bg);
   height: 100vh;
   grid-template-rows: 2fr 0.5fr 1fr 2fr 1fr;
 }
@@ -250,7 +247,7 @@ body #intro {
   border-top: 2px solid #ff00ff;
   line-height: 3;
   text-align: center;
-  background-color: rgb(15, 15, 15);
+  background-color: var(--intro-background);
   grid-template-rows: 1fr 1fr 1fr 1fr;
   height: 100vh;
 }
@@ -270,7 +267,7 @@ body #intro img {
 body #tech {
   padding: 5rem 0rem 2rem 0rem;
   gap: 3rem;
-  background-color: #0a0a0a;
+  background-color: var(--tech-background);
 }
 body #tech h1 {
   font-size: 1em;
@@ -314,7 +311,7 @@ body #tech .tech-card .tech-cont .progress {
   grid-column: span 2;
   width: 100%;
   height: 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--tech-progress-bar-gutter);
   overflow: hidden;
   width: 100%;
 }
@@ -336,7 +333,7 @@ body #creations {
   gap: 2em;
   align-items: center;
   justify-items: center;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--creations-background);
 }
 body #creations img {
   width: 1em;
@@ -360,7 +357,7 @@ body #creations .emoji {
   font-size: 3em;
 }
 body #creations .project-card {
-  background-color: #0f0f0f;
+  background-color: var(--creations-project-background);
   padding: 0.5em 0em 0.5em 0em;
   max-width: 30em;
   width: 95%;
@@ -381,7 +378,7 @@ body #creations .project-card .emojicont .emo2 {
   transform: rotate(-20deg);
 }
 body #contact-me {
-  background-color: black;
+  background-color: var(--contact-me-background);
   width: 100%;
   margin-top: 4em;
   margin-bottom: 4em;
@@ -405,6 +402,7 @@ body #contact-me textarea {
   width: 100%;
   max-width: 100%;
   min-width: 100%;
+  background-color: var(--input-box-color);
 }
 body #contact-me input:focus,
 body #contact-me textarea:focus {
@@ -415,6 +413,8 @@ body #contact-me textarea {
   height: 6em;
 }
 body #contact-me label {
+  transition: var(--theme-transition) ease;
+  color: var(--input-label-color);
   font-size: 0.7em;
   align-self: flex-start;
 }
@@ -423,7 +423,8 @@ body #contact-me button {
   align-self: flex-end;
   font-size: 0.8em;
   color: white;
-  background-color: #000000;
+  background-color: transparent;
+  color: var(--para-color);
   border-radius: 2rem;
   transition: 0.2s linear;
   padding: 0.1em 0.6em;
@@ -437,7 +438,7 @@ body footer {
   display: grid;
   align-items: center;
   flex-flow: column;
-  background-color: #0f0f0f;
+  background-color: var(--footer-background);
   grid-template-columns: 1fr 1fr;
   padding: 1em 0em;
   font-size: 0.5em;
@@ -461,7 +462,8 @@ body footer .links {
   gap: 0.5em;
 }
 body footer a {
-  color: rgb(206, 206, 206);
+  transition: var(--theme-transition) ease;
+  color: var(--para-color);
   text-decoration: none;
 }
 
@@ -557,11 +559,11 @@ body footer a {
 @-webkit-keyframes typing {
   from {
     width: 0px;
-    border-right: 1px solid var(--cursor-color);
+    border-right: 1px solid white;
   }
   to {
     width: var(--characters);
-    border-right: 1px solid var(--cursor-color);
+    border-right: 1px solid white;
   }
 }
 @keyframes typing {
@@ -576,11 +578,11 @@ body footer a {
 }
 @-webkit-keyframes typing2 {
   from {
-    border-right: 1px solid var(--cursor-color);
+    border-right: 1px solid white;
     width: var(--characters);
   }
   to {
-    border-right: 1px solid var(--cursor-color);
+    border-right: 1px solid white;
     width: 0px;
   }
 }
@@ -621,7 +623,7 @@ body footer a {
     border-right: 0;
   }
   to {
-    border-right: 1px solid var(--cursor-color);
+    border-right: 1px solid white;
   }
 }
 @keyframes cursor-blink {
@@ -637,7 +639,7 @@ body footer a {
     border-right: 0;
   }
   to {
-    border-right: 1px solid var(--cursor-color);
+    border-right: 1px solid white;
   }
 }
 @keyframes cursor-blink2 {

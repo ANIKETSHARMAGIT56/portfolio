@@ -3,51 +3,24 @@ const elem = document.querySelector("#greet")
 const bdy = document.querySelector("body")
 const nav = document.querySelector("nav")
 const head = document.querySelector("#head")
+const themefilter = document.querySelector("#themefilter")
+const themeswitcher = document.querySelector("#themeswitcher")
 let lang = 0
 let i = 0
 
+
+let a= undefined;
 
 swaplang();
 elem.addEventListener("animationend", changelang)
 
 
-if(bdy.classList.contains("lightbody")){
-    themefilter.classList.remove("themefilteranim")
-    sun.style.display="inline-block"
-    moon.style.display="none"
-}
-if(bdy.classList.contains("darkbody")){
-    themefilter.classList.add("themefilteranim")
-    moon.style.display="inline-block"
-    sun.style.display="none"
-}
-themeswitcher.addEventListener("mousedown",riseupdown =>{
-    // console.log("buahahaha")
-    if(bdy.classList.contains("lightbody")){
-        bdy.classList.remove("lightbody")
-        themefilter.classList.add("themefilteranim")
-        bdy.classList.add("darkbody")
-        moon.style.display="inline-block"
-        sun.style.display="none"
-
-
-    }
-    else if(bdy.classList.contains("darkbody")){
-        bdy.classList.remove("darkbody")
-        themefilter.classList.remove("themefilteranim")
-        bdy.classList.add("lightbody")
-        sun.style.display="inline-block"
-        console.log("buahahaha")
-
-        moon.style.display="none"
-    }
-})
-
-
 
 function swaplang(){
-    let a = greetings[lang]
-    bdy.className="";
+    if (a != undefined){
+        bdy.classList.remove("ch"+ a.length)
+    }
+    a = greetings[lang]
     bdy.classList.add("ch"+ a.length)
     elem.innerHTML = a
     lang++;
@@ -70,7 +43,6 @@ function changelang(){
         elem.style.animation = null;
     }
     i++;
-    // grab an element from dom
     
 }
 
@@ -98,3 +70,27 @@ function entr(entry){
         nav.style.boxShadow = "0px -5px 20px #ff01aa"
         }
 }
+
+bdy.classList.add("darkbody")
+if(bdy.classList.contains("lightbody")){
+    themefilter.classList.remove("themefilteranim")
+}
+if(bdy.classList.contains("darkbody")){
+    themefilter.classList.add("themefilteranim")
+}
+
+themeswitcher.addEventListener("mousedown",hemlo =>{
+    console.log("buahahaha")
+       if(bdy.classList.contains("lightbody")){
+        bdy.classList.remove("lightbody")
+        themefilter.classList.add("themefilteranim")
+        bdy.classList.add("darkbody")
+        
+    }
+    else if(bdy.classList.contains("darkbody")){
+        console.log("buahahaha")
+        bdy.classList.remove("darkbody")
+        themefilter.classList.remove("themefilteranim")
+        bdy.classList.add("lightbody")
+    }
+})
