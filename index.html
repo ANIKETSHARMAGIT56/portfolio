@@ -7,22 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aniket</title>
 </head>
-<link rel="icon" href="favicon.svg">
+<link rel="icon" href="images/favicon.svg">
 <link rel="stylesheet" href="style.css">
+
 <body class="darkbody">
-    <div id="themeswitcher"></div>
-    <div id="themefilter"></div>
+    <div class="themefilter"></div>
 
     <nav>
+        <div class="themefilter"></div>
         <h1>Aniket</h1>
-        <input type="checkbox" >
-        <div id="button" onclick="navbtn()">
+        <!-- <input type="checkbox" > -->
+        <div id="button" class="unexpanded-hamburger">
             <div class="stick" id="stick1"></div>
             <div class="stick" id="stick2"></div>
             <div class="stick" id="stick3"></div>
-            
         </div>
-        <div id="navlinks">
+        <div id="themeswitcher"></div>
+        <div id="navlinks" class="unexpanded-navlinks">
             <a href="#head">
                 <p>Home</p>
             </a>
@@ -38,6 +39,7 @@
             <a href="#contact-me">
                 <p>contact</p>
             </a>
+
         </div>
 
     </nav>
@@ -221,8 +223,8 @@
                 legacy OpenGL</p>
             <h4 class="links">Links</h4>
             <div class="link-container">
-                <a class="gh-link link1 icon" target="_blank" href="https://github.com/ANIKETSHARMAGIT56/tetris"><img
-                        src="images/github.svg" alt=""></a>
+                <a class="gh-link link1 icon" target="_blank" href="https://github.com/ANIKETSHARMAGIT56/tetris">
+                    <img src="images/github.svg" alt=""></a>
             </div>
         </div>
         <div class="project-card">
@@ -276,35 +278,36 @@
         <form name="contact" method="POST" action="submitted.html" data-netlify="true" target="_blank">
             <label>Name</label>
             <input type="text" id="form-name" name="name" />
-            
+
             <label>Email</label>
             <input type="email" name="email" />
-            
-            <label>Discord ID (optional)</label>
-            <input type="name" name="discord" />
-            
+
+            <label>Something about you</label>
+            <textarea name="about the sender"></textarea>
+
             <label>Message</label>
             <textarea name="message"></textarea>
-            
+
             <button id="bttn" type="submit"
                 onclick="document.getElementById('bttn').innerText='submitted'">Submit</button>
         </form>
+        <p>Want an awesome site like this?</p>
+        <p>Email me at </p>
+        <!-- <p> <br> </p> -->
+        <p><a style="color:rgb(4, 138, 190)" href="mailto:aniketsharmawin10@gmail.com">aniketsharmawin10@gmail.com</a>
+        </p>
     </section>
     <footer>
         <div class="links">
             <h2>links</h2>
             <a target="_blank" href="https://github.com">github</a>
-        </div>
-        <div class="links">
-            <h2>social</h2>
-            <p>discord: </p>
-            <p> aniket#0001</p>
+            <a href="https://smalltownnews.netlify.app">smalltown news</a>
         </div>
         <p>Copyright </p>
         <!-- <br><br> -->
         <p>ⒸAniket Sharma</p>
     </footer>
 </body>
-<script src="theme.js"></script>
 <script src="main.js"></script>
+
 </html>

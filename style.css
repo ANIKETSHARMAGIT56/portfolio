@@ -1,5 +1,6 @@
 body {
   --body-bg: #00000000;
+  --nav-background: #ffffff;
   --intro-background: #5f5f5f00;
   --tech-background: #ffffff00;
   --tech-card-background: #ffffff06;
@@ -14,7 +15,6 @@ body {
 }
 
 .darkbody {
-  --nav-background: #000000;
   --cursor-color: white;
   --para-color: #c5c5c5;
   --submit-button-text: #c5c5c5;
@@ -23,7 +23,6 @@ body {
 }
 
 .lightbody {
-  --nav-background: #ffffff;
   --cursor-color: rgb(0, 0, 0);
   --para-color: #000000;
   --submit-button-text: #000000;
@@ -54,7 +53,7 @@ h2 {
 
 p {
   color: var(--para-color);
-  transition: color 1s ease;
+  transition: color 1s ease-in-out;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -114,12 +113,12 @@ p {
 }
 
 body {
-  z-index: 0;
+  z-index: 1000;
   font-size: 2rem;
   display: flex;
   flex-flow: column;
 }
-body .icon {
+body img {
   width: 2em;
   height: 2em;
 }
@@ -133,22 +132,45 @@ body nav {
   padding: 0.5rem 1rem 0.5rem 1rem;
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 4rem;
+  align-self: center;
+  justify-self: center;
+  transition: background-color 2s ease-in-out;
+  overflow: hidden;
 }
-body nav #button,
-body nav label {
+body nav * {
+  z-index: 100;
+}
+body nav .themefilter {
+  z-index: 50;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+body nav #button {
   align-self: center;
   display: none;
+}
+body nav #themeswitcher {
+  padding-left: 1rem;
+  grid-row: 1/2;
+  grid-column: 3/4;
+  font-size: 1.6rem;
+  background-color: transparent !important;
+  background: linear-gradient(to right, #0084ff, #ff01ff);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 body nav h1 {
   align-self: center;
   justify-self: flex-start !important;
   font-size: 2em;
 }
-body nav input[type=checkbox] {
-  display: none;
-}
 body nav #navlinks {
+  grid-row: 1/2;
+  grid-column: 2/3;
   display: flex;
   height: inherit;
   justify-content: space-evenly;
@@ -170,22 +192,15 @@ body section {
   width: 100%;
 }
 body #themeswitcher {
-  background-color: black;
-  overflow: hidden;
-  box-sizing: border-box;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.176);
   height: 3rem;
   width: 3rem;
-  position: fixed;
-  z-index: 1000;
-  top: 4.5rem;
-  right: 0.5rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body #themefilter {
+body .themefilter {
   background-color: black;
   z-index: -1000;
   overflow: hidden;
@@ -193,15 +208,14 @@ body #themefilter {
   height: 0rem;
   width: 0rem;
   position: fixed;
-  top: 5.5rem;
-  transition: var(--theme-transition) ease-in-out;
-  right: 2rem;
+  top: 0;
+  right: 0;
   border-radius: 50%;
+  transition: 2s ease;
 }
 body .themefilteranim {
   height: 3rem !important;
   width: 3rem !important;
-  transition: 0.5s ease;
   transform: scale(150);
   background-color: #000 !important;
 }
@@ -351,7 +365,9 @@ body #creations p {
   font-size: 0.56em;
 }
 body #creations h4 {
+  transition: color var(--theme-transition) ease-in-out;
   font-size: 0.5em;
+  color: var(--para-color);
 }
 body #creations .emoji {
   font-size: 3em;
@@ -384,7 +400,7 @@ body #contact-me {
   margin-bottom: 4em;
 }
 body #contact-me form {
-  margin: 1rem auto;
+  margin: 1rem auto 10rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -469,7 +485,6 @@ body footer a {
 
 @media (max-width: 600px) {
   nav {
-    position: relative;
     overflow: hidden;
   }
   nav #button {
@@ -479,61 +494,58 @@ body footer a {
     justify-content: space-evenly;
     width: 2em;
     height: 3em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  nav #button :hover {
+    cursor: pointer;
   }
   nav #button .stick {
-    height: 2px;
     border-radius: 10px;
     background: linear-gradient(to right, #ff01aa, #0084ff);
     width: 100%;
     transition: 1s ease;
     position: absolute;
   }
-  nav #button #stick1 {
-    top: 33%;
-  }
-  nav #button #stick2 {
-    bottom: calc(50% - 2px);
-  }
-  nav #button #stick3 {
-    top: 66%;
-  }
   nav #navlinks {
+    grid-row: 2/3 !important;
     transition: 1s ease;
     overflow: hidden;
     display: inline;
     flex-flow: column;
-    grid-column: span 2;
+    grid-column: 1/4 !important;
+  }
+  nav .unexpanded-navlinks {
     height: 0px !important;
   }
-  nav input[type=checkbox] {
-    display: inline-block !important;
-    position: absolute;
-    align-self: flex-start;
-    margin-top: 1rem;
-    z-index: 10;
-    height: 2rem;
-    opacity: 0;
-    justify-self: end;
-    width: 4rem;
-  }
-  nav input[type=checkbox]:hover {
-    cursor: pointer;
-  }
-  nav input[type=checkbox]:checked ~ #navlinks {
+  nav .expanded-navlinks {
     height: 13em !important;
   }
-  nav input[type=checkbox]:checked ~ #button .stick {
+  nav .unexpanded-hamburger .stick {
+    height: 2px;
+  }
+  nav .unexpanded-hamburger #stick1 {
+    top: 33%;
+  }
+  nav .unexpanded-hamburger #stick2 {
+    bottom: calc(50% - 2px);
+  }
+  nav .unexpanded-hamburger #stick3 {
+    top: 66%;
+  }
+  nav .expanded-hamburger .stick {
     height: 3px;
   }
-  nav input[type=checkbox]:checked ~ #button #stick1 {
+  nav .expanded-hamburger #stick1 {
     transform: rotate(45deg);
     top: 50%;
     bottom: 50%;
   }
-  nav input[type=checkbox]:checked ~ #button #stick2 {
+  nav .expanded-hamburger #stick2 {
+    bottom: calc(50% - 2px);
     opacity: 0;
   }
-  nav input[type=checkbox]:checked ~ #button #stick3 {
+  nav .expanded-hamburger #stick3 {
     top: 50%;
     bottom: 50%;
     transform: rotate(-45deg);
@@ -548,12 +560,12 @@ body footer a {
     grid-template-columns: 1fr !important;
   }
   footer .links {
-    align-items: center;
+    align-items: flex-start;
     -moz-columns: 1/-1 !important;
          columns: 1/-1 !important;
   }
   footer p {
-    align-self: center;
+    align-self: flex-start;
   }
 }
 @-webkit-keyframes typing {
