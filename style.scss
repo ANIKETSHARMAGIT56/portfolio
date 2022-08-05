@@ -60,8 +60,9 @@ h2 {
 }
 
 * {
+    color: var(--para-color);
     --theme-transition: 1.5s;
-    transition: background-color var(--theme-transition) ease;
+    transition: color var(--theme-transition) ease;
     -ms-overflow-style: none;
     scrollbar-width: none;
     padding: 0;
@@ -427,10 +428,10 @@ body {
 
     #creations {
         // color-scheme: dark;
-        border-top: 1px solid #ff00ff;
+        // border-top: 1px solid #ff00ff;
         width: 100%;
         padding-top: 2em;
-        padding-bottom: 3%;
+        padding-bottom: 1.2em;
         gap: 2em;
         align-items: center;
         justify-items: center;
@@ -491,6 +492,58 @@ body {
 
         }
     }
+    #system-stats{
+        text-align: left;
+        gap: 3rem;
+        border-top: 1px solid #ff01aa;
+        padding-top: 1em;
+        // box-sizing: border-box;
+        // text-decoration: wavy;
+        img{
+            width: 50%;
+        }
+        pre{
+            overflow:hidden;
+            width: 90vw;
+            max-width: 58rem;
+            border: 2px solid rgb(119, 0, 128);
+            box-shadow: 0px 0px 30px -10px #ff01aa;
+            padding: 1rem;
+            font-size: min(2vw, 1.3rem);
+            *{
+                display: inline-block;
+            }
+            .arch-logo{
+                // text-shadow: 0px 0px 3px #0084ff;
+                color: #0084ff;
+                font-weight: 700;
+            }
+            .terminal-cursor{
+                // animation:  duration timing-function delay iteration-count direction fill-mode;
+                animation:terminalcursorblink 1s infinite reverse none;
+            }
+            .blue-point{
+                color: #0084ff;
+                font-weight: 700;
+                // text-shadow: 0px 0px 3px #ff00dd;
+            }
+            .green-point{
+                color: rgb(247, 0, 255);
+            }
+            .terminal-command{
+                color: rgb(255, 0, 183);
+                text-decoration: underline;
+            }
+            @keyframes terminalcursorblink{
+                from{
+                    opacity: 0;
+                }
+                to{
+                    opacity: 1;
+                }
+            }
+        }
+    }
 
     #contact-me {
         background-color: var(--contact-me-background);
@@ -540,7 +593,9 @@ body {
             font-size: 0.7em;
             align-self: flex-start;
         }
-
+        p{
+        font-size: min(4vw, 2rem);
+        }
         button {
             margin-top: 0.2em;
             align-self: flex-end;
